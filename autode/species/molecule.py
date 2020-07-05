@@ -12,6 +12,8 @@ from autode.smiles.smiles import init_organic_smiles
 from autode.smiles.smiles import init_smiles
 from autode.species.species import Species
 from autode.utils import requires_atoms
+from copy import deepcopy
+from autode.solvent.solvents import ExplicitSolvent
 
 
 class Molecule(Species):
@@ -122,15 +124,20 @@ class Molecule(Species):
 
 class SolvatedMolecule(Molecule):
 
-    @requires_atoms()
-    def optimise(self, method):
-        raise NotImplementedError
+    def __init__(self, mol, solvent_mol=None):
+        super().__init__(mol.name, mol.smiles, mol.atoms, None, mol.charge, mol.mult)
 
-    def __init__(self, name='solvated_molecule', smiles=None, atoms=None,
-                 solvent_name=None, charge=0, mult=1, solvent_mol=None):
-        super().__init__(name, smiles, atoms, solvent_name, charge, mult)
-
-        self.solvent_mol = solvent_mol
+        self.rdkit_mol_obj = mol.rdkit_mol_obj
+        self.rdkit_conf_gen_is_fine = mol.rdkit_conf_gen_is_fine
+        self.graph = deepcopy(mol.graph)
+        if solvent_mol is not None:
+            self.solvent = solvent_mol
+            assert isinstance(self.solvent, ExplicitSolvent)
+            logger.info('Checking explicit solvent has been calculated')
+            if not self.solvent.calculated:
+                self.solvent.calc()
+        else:
+            assert isinstance(self, ExplicitSolvent)
         self.qm_solvent_atoms = None
         self.mm_solvent_atoms = None
 

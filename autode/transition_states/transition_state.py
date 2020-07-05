@@ -12,6 +12,8 @@ from autode.methods import get_hmethod
 from autode.mol_graphs import set_active_mol_graph
 from autode.mol_graphs import get_truncated_active_mol_graph
 from autode.utils import requires_atoms, requires_graph
+from autode.point_charges import get_species_point_charges
+from autode.solvent.explicit_solvent import do_explicit_solvent_qmmm
 
 
 class TransitionState(TSbase):
@@ -33,7 +35,8 @@ class TransitionState(TSbase):
                                       n_cores=Config.n_cores,
                                       keywords=method.keywords.opt_ts,
                                       bond_ids_to_add=self.bond_rearrangement.all,
-                                      other_input_block=method.keywords.optts_block)
+                                      other_input_block=method.keywords.optts_block,
+                                      point_charges=get_species_point_charges(self))
         self.optts_calc.run()
 
         if not self.optts_calc.optimisation_converged():
@@ -48,7 +51,8 @@ class TransitionState(TSbase):
                                                   n_cores=Config.n_cores,
                                                   keywords=method.keywords.opt_ts,
                                                   bond_ids_to_add=self.bond_rearrangement.all,
-                                                  other_input_block=method.keywords.optts_block)
+                                                  other_input_block=method.keywords.optts_block,
+                                                  point_charges=get_species_point_charges(self))
                     self.optts_calc.run()
                 else:
                     logger.info('Lost imaginary mode')
@@ -221,10 +225,81 @@ class TransitionState(TSbase):
         self._update_graph()
 
 
+class SolvatedTransitionState(TransitionState):
+
+    def find_lowest_energy_ts_conformer(self):
+        """Find the lowest energy transition state conformer by performing
+        constrained optimisations"""
+        atoms, energy = deepcopy(self.atoms), deepcopy(self.energy)
+        calc = deepcopy(self.optts_calc)
+        qm_atoms = deepcopy(self.qm_solvent_atoms)
+        mm_atoms = deepcopy(self.mm_solvent_atoms)
+
+        hmethod = get_hmethod() if Config.hmethod_conformers else None
+        self.find_lowest_energy_conformer(hmethod=hmethod)
+
+        if len(self.conformers) == 1:
+            logger.warning('Only found a single conformer. '
+                           'Not rerunning TS optimisation')
+            self.set_atoms(atoms=atoms)
+            self.energy = energy
+            self.optts_calc = calc
+            self.qm_solvent_atoms = qm_atoms
+            self.mm_solvent_atoms = mm_atoms
+            return None
+
+        dist_consts = get_distance_constraints(self)
+        method = get_hmethod()
+
+        opt = Calculation(name=f'{self.name}_opt', molecule=self,
+                          method=method, keywords=method.keywords.opt,
+                          n_cores=Config.n_cores, distance_constraints=dist_consts)
+
+        opt.run()
+        self.set_atoms(atoms=opt.get_final_atoms())
+
+        for i, charge in enumerate(opt.get_atomic_charges()):
+            self.graph.nodes[i]['charge'] = charge
+
+        _, species_atoms, qm_solvent_atoms, mm_solvent_atoms = do_explicit_solvent_qmmm(self, method, Config.n_cores, dist_consts=dist_consts)
+        self.set_atoms(species_atoms)
+        self.qm_solvent_atoms = qm_solvent_atoms
+        self.mm_solvent_atoms = mm_solvent_atoms
+
+        self.optimise(name_ext='optts_conf')
+
+        if self.is_true_ts() and self.energy < energy:
+            logger.info('Conformer search successful')
+
+        else:
+            logger.warning(f'Transition state conformer search failed '
+                           f'(∆E = {energy - self.energy:.4f} Ha). Reverting')
+            self.set_atoms(atoms=atoms)
+            self.energy = energy
+            self.optts_calc = calc
+            self.imaginary_frequencies = calc.get_imaginary_freqs()
+            self.qm_solvent_atoms = qm_atoms
+            self.mm_solvent_atoms = mm_atoms
+
+        return None
+
+    def __init__(self, ts_guess):
+        """
+        Solvated TS
+
+        Arguments:
+            ts_guess: autode.transition_states.ts_guess.SolvatedTSguess
+        """
+
+        super().__init__(ts_guess=ts_guess)
+        self.qm_solvent_atoms = ts_guess.qm_solvent_atoms
+        self.mm_solvent_atoms = ts_guess.mm_solvent_atoms
+
+
 def get_ts_object(ts_guess):
     """Creates TransitionState for the TSguess. If it is a SolvatedTSguess,
     a SolvatedTransitionState is returned"""
     if ts_guess.is_explicitly_solvated():
-        raise NotImplementedError
+        return SolvatedTransitionState(ts_guess=ts_guess)
 
     return TransitionState(ts_guess=ts_guess)

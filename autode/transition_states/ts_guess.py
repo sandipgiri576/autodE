@@ -9,6 +9,7 @@ from autode.log import logger
 from autode.methods import get_lmethod
 from autode.mol_graphs import get_mapping_ts_template
 from autode.mol_graphs import get_truncated_active_mol_graph
+from autode.point_charges import get_species_point_charges
 
 
 def get_ts_guess_constrained_opt(reactant, method, keywords, name, distance_consts, product):
@@ -38,7 +39,8 @@ def get_ts_guess_constrained_opt(reactant, method, keywords, name, distance_cons
                                molecule=mol_with_constraints, method=l_method,
                                keywords=l_method.keywords.low_opt,
                                n_cores=Config.n_cores,
-                               distance_constraints=distance_consts)
+                               distance_constraints=distance_consts,
+                               point_charges=get_species_point_charges(mol_with_constraints))
 
     # Try and set the atoms, but continue if they're not found as hopefully the
     # other method will be fine(?)
@@ -51,7 +53,8 @@ def get_ts_guess_constrained_opt(reactant, method, keywords, name, distance_cons
     hl_const_opt = Calculation(name=f'{name}_constrained_opt',
                                molecule=mol_with_constraints, method=method,
                                keywords=keywords, n_cores=Config.n_cores,
-                               distance_constraints=distance_consts)
+                               distance_constraints=distance_consts,
+                               point_charges=get_species_point_charges(mol_with_constraints))
 
     # Form a transition state guess from the optimised atoms and set the
     # corresponding energy
@@ -168,10 +171,18 @@ class TSguess(TSbase):
         super().__init__(name=name, atoms=atoms, reactant=reactant, product=product)
 
 
+class SolvatedTSguess(TSguess):
+
+    def __init__(self, species, reactant, product, name='ts_guess'):
+        super().__init__(species.atoms, reactant, product, name)
+        self.qm_solvent_atoms = species.qm_solvent_atoms
+        self.mm_solvent_atoms = species.mm_solvent_atoms
+
+
 def get_ts_guess(species, reactant, product, name):
     """Creates TSguess. If it is a SolvatedReactantComplex, a SolvatedTSguess
     is returned"""
     if species.is_explicitly_solvated():
-        raise NotImplementedError
+        return SolvatedTSguess(species=species, reactant=reactant, product=product, name=name)
 
     return TSguess(species.atoms, reactant=reactant, product=product, name=name)

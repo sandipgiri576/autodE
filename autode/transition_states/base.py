@@ -13,6 +13,7 @@ from autode.species.molecule import Molecule
 from autode.mol_graphs import make_graph
 from autode.mol_graphs import species_are_isomorphic
 from autode.species.species import Species
+from autode.point_charges import get_species_point_charges
 
 
 class TSbase(Species):
@@ -45,7 +46,8 @@ class TSbase(Species):
             self.calc = Calculation(name=self.name + '_hess', molecule=self,
                                     method=method,
                                     keywords=method.keywords.hess,
-                                    n_cores=Config.n_cores)
+                                    n_cores=Config.n_cores,
+                                    point_charges=get_species_point_charges(self))
             self.calc.run()
 
         imag_freqs = self.calc.get_imaginary_freqs()

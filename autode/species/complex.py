@@ -244,13 +244,8 @@ class ProductComplex(Complex):
 
 class SolvatedReactantComplex(Complex):
 
-    def run_const_opt(self, const_opt):
-        """Run a constrained optimisation of the ReactantComplex"""
-        raise NotImplementedError
-
-    def __init__(self, solvent_mol, *args, name='complex'):
+    def __init__(self, *args, name='complex'):
         super().__init__(*args, name=name)
-        self.solvent_mol = solvent_mol
         self.qm_solvent_atoms = None
         self.mm_solvent_atoms = None
 
@@ -259,17 +254,13 @@ class NCIComplex(Complex):
     pass
 
 
-def is_solvated_reactant_complex(molecule_complex):
-    return isinstance(molecule_complex, SolvatedReactantComplex)
-
-
 def get_complexes(reaction):
     """Creates Reactant and Product complexes for the reaction"""
 
     if reaction.reacs[0].is_explicitly_solvated():
-        raise NotImplementedError
-
-    reac = ReactantComplex(*reaction.reacs, name=f'{str(reaction)}_reactant')
+        reac = SolvatedReactantComplex(*reaction.reacs, name=f'{str(reaction)}_reactant')
+    else:
+        reac = ReactantComplex(*reaction.reacs, name=f'{str(reaction)}_reactant')
     prod = ProductComplex(*reaction.prods, name=f'{str(reaction)}_product')
 
     return reac, prod

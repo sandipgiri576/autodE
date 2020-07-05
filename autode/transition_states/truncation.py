@@ -274,6 +274,11 @@ def is_worth_truncating(reactant_complex, bond_rearrangement):
         reactant_complex (autode.complex.ReactantComplex):
         bond_rearrangement (autode.bond_rearrangement.BondRearrangement):
     """
+
+    if reactant_complex.is_explicitly_solvated():
+        logger.info('Not worth truncating explicitily solvated reaction')
+        return False
+
     if has_matching_ts_templates(reactant_complex, bond_rearrangement):
         logger.info('Not truncating a reactant (complex) that has a saved '
                     'template')

@@ -8,6 +8,7 @@ from autode.exceptions import UnbalancedReaction
 from autode.exceptions import SolventsDontMatch
 from autode.log import logger
 from autode.methods import get_hmethod
+from autode.species.molecule import SolvatedMolecule
 from autode.species.complex import get_complexes
 from autode.species.molecule import Product
 from autode.species.molecule import Reactant
@@ -153,6 +154,26 @@ class Reaction:
 
         return None
 
+    def calc_solvent(self):
+        """Calculates the properties of the explicit solvent molecule"""
+
+        if self.solvent is None:
+            return
+
+        # solvent.calc works in solvent/
+        self.solvent.calc()
+        self.make_solvated_mol_objects()
+
+    def make_solvated_mol_objects(self):
+        """Converts the Molecule objects in the reaction into SolvatedMolecule objects, and sets the solvent molecule"""
+        solvated_reacs, solvated_prods = [], []
+
+        for mol in self.reacs:
+            solvated_reacs.append(SolvatedMolecule(mol, self.solvent))
+        for mol in self.prods:
+            solvated_prods.append(SolvatedMolecule(mol, self.solvent))
+        self.reacs, self.prods = solvated_reacs, solvated_prods
+
     @work_in('reactants_and_products')
     def optimise_reacs_prods(self):
         """Perform a geometry optimisation on all the reactants and products
@@ -285,6 +306,8 @@ class Reaction:
 
         @work_in(self.name)
         def calculate(reaction):
+            if Config.explicit_solvent:
+                reaction.calc_solvent()
             reaction.find_lowest_energy_conformers()
             reaction.optimise_reacs_prods()
             reaction.find_complexes()

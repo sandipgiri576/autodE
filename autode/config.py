@@ -28,7 +28,7 @@ class Config:
     # -------------------------------------------------------------------------
     # When using explicit solvent is stable this will be uncommented
     #
-    # explicit_solvent = False
+    explicit_solvent = False
     #
     # -------------------------------------------------------------------------
     # Setting to keep input files, otherwise they will be removed

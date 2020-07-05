@@ -1,23 +1,36 @@
 from autode.exceptions import SolventNotFound
+from autode.config import Config
+from autode.species.molecule import Molecule
+from autode.species.molecule import SolvatedMolecule
+from autode.methods import get_hmethod
+from autode.log import logger
+from autode.utils import work_in
 
 
-def get_solvent(solvent_name, implicit=True, explicit=False):
+def get_solvent(solvent_name):
     """For a named solvent_name return the autode.solvent.solvents.Solvent
     that is one of the aliases """
     if solvent_name is None:
         return None
 
-    if implicit:
+    implicit_solvent = None
 
-        for solvent in solvents:
-            if solvent_name.lower() in solvent.aliases:
-                return solvent
+    for solvent in solvents:
+        if solvent_name.lower() in solvent.aliases:
+            implicit_solvent = solvent
+            break
 
+    if implicit_solvent is None:
         raise SolventNotFound
 
-    if explicit:
-        # Return ExplicitSolvent
-        raise NotImplementedError
+    if not Config.explicit_solvent:
+
+        return implicit_solvent
+
+    else:
+
+        explicit_mol = Molecule(name=implicit_solvent.name, smiles=implicit_solvent.smiles)
+        return ExplicitSolvent(explicit_mol, implicit_solvent)
 
     return None
 
@@ -74,9 +87,44 @@ class Solvent:
         self.mopac = mopac
 
 
-class ExplicitSolvent(Solvent):
-    # Implement explicit solvation here
-    pass
+class ExplicitSolvent(SolvatedMolecule):
+
+    @work_in('conformers')
+    def calc(self):
+        """
+        Run the calculations to get the properties of the
+        explicit solvent molecule.
+        """
+
+        logger.info('Calculating explicit solvent')
+
+        h_method = get_hmethod()
+        self.find_lowest_energy_conformer(hmethod=h_method if Config.hmethod_conformers else None)
+        self.optimise(method=h_method)
+        self.single_point(method=h_method)
+        self.calculated = True
+
+        return None
+
+    def __init__(self, explicit_mol, implicit_solvent):
+        """
+        Explicit solvent class. Contains a structure
+        and energy for the solvent molecule, in addition
+        to the implicit parameters.
+
+        Args:
+            explicit_mol (autode.species.molecule.Molecule): explicit solvent mol
+            implicit_solvent (autode.solvent.solvents.Solvent): implicit solvent
+        """
+        super().__init__(explicit_mol)
+
+        self.aliases = implicit_solvent.aliases
+        self.orca = implicit_solvent.orca
+        self.g09 = implicit_solvent.g09
+        self.nwchem = implicit_solvent.nwchem
+        self.xtb = implicit_solvent.xtb
+        self.mopac = implicit_solvent.mopac
+        self.calculated = False
 
 
 solvents = [Solvent(name='water', smiles='O', aliases=['water', 'h2o'], orca='water', g09='Water', nwchem='water', xtb='Water', mopac='water'),
