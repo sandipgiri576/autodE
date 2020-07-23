@@ -14,7 +14,7 @@ from autode.mol_graphs import make_graph
 from autode.utils import requires_atoms
 from autode.utils import work_in
 from autode.utils import requires_conformers
-from autode.solvent.explicit_solvent import do_explicit_solvent_qmmm
+from autode.solvent.explicit_solvent import do_explicit_solvent_calcs
 
 
 class Species:
@@ -134,13 +134,9 @@ class Species:
             make_graph(self)
 
         if self.is_explicitly_solvated():
-            for i, charge in enumerate(calc.get_atomic_charges()):
-                self.graph.nodes[i]['charge'] = charge
-
-            _, species_atoms, qm_solvent_atoms, mm_solvent_atoms = do_explicit_solvent_qmmm(self, method, n_confs=96, n_cores=Config.n_cores)
+            _, species_atoms, solvent_atoms = do_explicit_solvent_calcs(self, f'{self.name}_opt', method, Config.n_cores)
             self.set_atoms(species_atoms)
-            self.qm_solvent_atoms = qm_solvent_atoms
-            self.mm_solvent_atoms = mm_solvent_atoms
+            self.solvent_atoms = solvent_atoms
 
         return None
 
@@ -150,14 +146,14 @@ class Species:
         autode.wrappers.base.ElectronicStructureMethod"""
         logger.info(f'Running single point energy evaluation of {self.name}')
 
-        sp = Calculation(name=f'{self.name}_sp', molecule=self, method=method,
-                         keywords=method.keywords.sp, n_cores=Config.n_cores,
-                         point_charges=get_species_point_charges(self))
-        sp.run()
-
         if self.is_explicitly_solvated():
-            self.energy = sp.get_energy() - self.solvent.energy
+            self.energy, _, _ = do_explicit_solvent_calcs(self, f'{self.name}_opt', method, Config.n_cores)
+
         else:
+            sp = Calculation(name=f'{self.name}_sp', molecule=self, method=method,
+                            keywords=method.keywords.sp, n_cores=Config.n_cores,
+                            point_charges=get_species_point_charges(self))
+            sp.run()
             self.energy = sp.get_energy()
 
         return None

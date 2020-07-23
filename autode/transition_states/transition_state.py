@@ -13,7 +13,7 @@ from autode.mol_graphs import set_active_mol_graph
 from autode.mol_graphs import get_truncated_active_mol_graph
 from autode.utils import requires_atoms, requires_graph
 from autode.point_charges import get_species_point_charges
-from autode.solvent.explicit_solvent import do_explicit_solvent_qmmm
+from autode.solvent.explicit_solvent import do_explicit_solvent_calcs
 
 
 class TransitionState(TSbase):
@@ -258,13 +258,9 @@ class SolvatedTransitionState(TransitionState):
         opt.run()
         self.set_atoms(atoms=opt.get_final_atoms())
 
-        for i, charge in enumerate(opt.get_atomic_charges()):
-            self.graph.nodes[i]['charge'] = charge
-
-        _, species_atoms, qm_solvent_atoms, mm_solvent_atoms = do_explicit_solvent_qmmm(self, method, Config.n_cores, dist_consts=dist_consts)
+        _, species_atoms, solvent_atoms = do_explicit_solvent_calcs(self, f'{self.name}_opt', method, Config.n_cores)
         self.set_atoms(species_atoms)
-        self.qm_solvent_atoms = qm_solvent_atoms
-        self.mm_solvent_atoms = mm_solvent_atoms
+        self.solvent_atoms = solvent_atoms
 
         self.optimise(name_ext='optts_conf')
 
