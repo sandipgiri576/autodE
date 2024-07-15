@@ -1,0 +1,1704 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Optimisers &#8212; autodE  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/opt/optimisers';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Bond Rearrangement" href="../bond_rearrangement.html" />
+    <link rel="prev" title="Coordinates" href="coordinates.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">autodE  documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../config.html">Configuration</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Reference</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../atoms.html">Atoms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bonds.html">Bonds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculation.html">Calculation</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../conformers/index.html">Conformers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../conformers/conf_gen.html">Conf Gen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../conformers/conformer.html">Conformer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../conformers/conformers.html">Conformers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../pes/index.html">PES</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../pes/pes.html">Potential Energy Surfaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pes/mep.html">Min Energy Pathway</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../reactions/index.html">Reactions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../reactions/multistep.html">Multistep Reaction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reactions/reaction.html">Reaction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reactions/reaction_types.html">Reaction Types</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../smiles/index.html">SMILES</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../smiles/smiles.html">Molecules from SMILES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smiles/parser.html">SMILES Parser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smiles/builder.html">3D Geometry Builder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smiles/atom_types.html">SMILES Atom Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smiles/angles.html">SMILES Angles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smiles/base.html">SMILES Base</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../solvent/index.html">Solvent</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solvent/solvents.html">Solvents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solvent/explicit_solvent.html">Explicit Solvent</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../species/index.html">Species</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../species/complex.html">Complex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../species/molecule.html">Molecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../species/species.html">Species</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../neb/index.html">Nudged elastic band</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../neb/neb.html">NEB Transition states</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../neb/original.html">Original NEB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../neb/ci.html">Climbing image NEB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../neb/idpp.html">Image dependent pair potential</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../transition_states/index.html">Transition States</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../transition_states/base.html">Base</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../transition_states/locate_tss.html">Locate TSs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../transition_states/templates.html">Templates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../transition_states/transition_state.html">Transition State</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../transition_states/truncation.html">Truncation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../transition_states/ts_guess.html">TS Guess</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../thermochemistry/index.html">Thermochemistry</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../thermochemistry/igm.html">Ideal gas model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../thermochemistry/symmetry.html">Symmetry</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../wrappers/index.html">Wrappers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../wrappers/base.html">Base</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wrappers/g09.html">Gaussian09</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wrappers/keywords.html">Keywords</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wrappers/mopac.html">MOPAC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wrappers/nwchem.html">NWChem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wrappers/orca.html">ORCA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wrappers/xtb.html">XTB</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">Optimisation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="coordinates.html">Coordinates</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Optimisers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../bond_rearrangement.html">Bond Rearrangement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../config.html">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../constants.html">Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exceptions.html">Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../geom.html">Geometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../input_output.html">Input Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../log.html">Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods.html">Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mol_graphs.html">Molecular Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plotting.html">Plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../point_charges.html">Point Charges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../substitution.html">Substitution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../units.html">Units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../utils.html">Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../values.html">Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hessians.html">Hessians</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../examples/index.html">Examples</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/species.html">Species</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/molecules.html">Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/reactions.html">Reactions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/nci.html">Non-covalent Interaction Complexes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/manipulation.html">Molecular Manipulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/pes1d.html">1D PES Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/pes2d.html">2D PES Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/conformers.html">Conformer Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/rmsd.html">RMSD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/tss.html">Transition States</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/thermochem.html">Thermochemistry</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../dev/index.html">Development</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../dev/overview.html">Code Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../dev/contributing.html">Contributing to autodE</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../citation.html">Citation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1002/anie.202011941">Paper</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/reference/opt/optimisers.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Optimisers</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.BaseOptimiser"><code class="docutils literal notranslate"><span class="pre">BaseOptimiser</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.BaseOptimiser.converged"><code class="docutils literal notranslate"><span class="pre">BaseOptimiser.converged</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.BaseOptimiser.final_coordinates"><code class="docutils literal notranslate"><span class="pre">BaseOptimiser.final_coordinates</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.BaseOptimiser.last_energy_change"><code class="docutils literal notranslate"><span class="pre">BaseOptimiser.last_energy_change</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.BaseOptimiser.run"><code class="docutils literal notranslate"><span class="pre">BaseOptimiser.run()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.ExternalOptimiser"><code class="docutils literal notranslate"><span class="pre">ExternalOptimiser</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.ExternalOptimiser.converged"><code class="docutils literal notranslate"><span class="pre">ExternalOptimiser.converged</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.ExternalOptimiser.last_energy_change"><code class="docutils literal notranslate"><span class="pre">ExternalOptimiser.last_energy_change</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.NDOptimiser"><code class="docutils literal notranslate"><span class="pre">NDOptimiser</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.NDOptimiser.__init__"><code class="docutils literal notranslate"><span class="pre">NDOptimiser.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.NDOptimiser.clean_up"><code class="docutils literal notranslate"><span class="pre">NDOptimiser.clean_up()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.NDOptimiser.converged"><code class="docutils literal notranslate"><span class="pre">NDOptimiser.converged</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.NDOptimiser.etol"><code class="docutils literal notranslate"><span class="pre">NDOptimiser.etol</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.NDOptimiser.from_file"><code class="docutils literal notranslate"><span class="pre">NDOptimiser.from_file()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.NDOptimiser.gtol"><code class="docutils literal notranslate"><span class="pre">NDOptimiser.gtol</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.NDOptimiser.optimise"><code class="docutils literal notranslate"><span class="pre">NDOptimiser.optimise()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.NDOptimiser.optimiser_params"><code class="docutils literal notranslate"><span class="pre">NDOptimiser.optimiser_params</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.NDOptimiser.plot_optimisation"><code class="docutils literal notranslate"><span class="pre">NDOptimiser.plot_optimisation()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.NDOptimiser.print_geometries"><code class="docutils literal notranslate"><span class="pre">NDOptimiser.print_geometries()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.NullOptimiser"><code class="docutils literal notranslate"><span class="pre">NullOptimiser</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.NullOptimiser.converged"><code class="docutils literal notranslate"><span class="pre">NullOptimiser.converged</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.NullOptimiser.final_coordinates"><code class="docutils literal notranslate"><span class="pre">NullOptimiser.final_coordinates</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.NullOptimiser.last_energy_change"><code class="docutils literal notranslate"><span class="pre">NullOptimiser.last_energy_change</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.NullOptimiser.run"><code class="docutils literal notranslate"><span class="pre">NullOptimiser.run()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.Optimiser"><code class="docutils literal notranslate"><span class="pre">Optimiser</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.Optimiser.__init__"><code class="docutils literal notranslate"><span class="pre">Optimiser.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.Optimiser._step"><code class="docutils literal notranslate"><span class="pre">Optimiser._step()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.Optimiser.converged"><code class="docutils literal notranslate"><span class="pre">Optimiser.converged</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.Optimiser.final_coordinates"><code class="docutils literal notranslate"><span class="pre">Optimiser.final_coordinates</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.Optimiser.iteration"><code class="docutils literal notranslate"><span class="pre">Optimiser.iteration</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.Optimiser.last_energy_change"><code class="docutils literal notranslate"><span class="pre">Optimiser.last_energy_change</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.Optimiser.optimise"><code class="docutils literal notranslate"><span class="pre">Optimiser.optimise()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.Optimiser.optimiser_params"><code class="docutils literal notranslate"><span class="pre">Optimiser.optimiser_params</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.Optimiser.run"><code class="docutils literal notranslate"><span class="pre">Optimiser.run()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.OptimiserHistory"><code class="docutils literal notranslate"><span class="pre">OptimiserHistory</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.OptimiserHistory.__init__"><code class="docutils literal notranslate"><span class="pre">OptimiserHistory.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.OptimiserHistory.add"><code class="docutils literal notranslate"><span class="pre">OptimiserHistory.add()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.OptimiserHistory.clean_up"><code class="docutils literal notranslate"><span class="pre">OptimiserHistory.clean_up()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.OptimiserHistory.close"><code class="docutils literal notranslate"><span class="pre">OptimiserHistory.close()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.OptimiserHistory.final"><code class="docutils literal notranslate"><span class="pre">OptimiserHistory.final</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.OptimiserHistory.get_opt_params"><code class="docutils literal notranslate"><span class="pre">OptimiserHistory.get_opt_params()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.OptimiserHistory.load"><code class="docutils literal notranslate"><span class="pre">OptimiserHistory.load()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.OptimiserHistory.open"><code class="docutils literal notranslate"><span class="pre">OptimiserHistory.open()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.OptimiserHistory.penultimate"><code class="docutils literal notranslate"><span class="pre">OptimiserHistory.penultimate</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.OptimiserHistory.save_opt_params"><code class="docutils literal notranslate"><span class="pre">OptimiserHistory.save_opt_params()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.print_geometries_from"><code class="docutils literal notranslate"><span class="pre">print_geometries_from()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.rfo.RFOptimiser"><code class="docutils literal notranslate"><span class="pre">RFOptimiser</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.rfo.RFOptimiser.__init__"><code class="docutils literal notranslate"><span class="pre">RFOptimiser.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.rfo.RFOptimiser._step"><code class="docutils literal notranslate"><span class="pre">RFOptimiser._step()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.prfo.PRFOptimiser"><code class="docutils literal notranslate"><span class="pre">PRFOptimiser</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.prfo.PRFOptimiser.__init__"><code class="docutils literal notranslate"><span class="pre">PRFOptimiser.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.prfo.PRFOptimiser._step"><code class="docutils literal notranslate"><span class="pre">PRFOptimiser._step()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.prfo.PRFOptimiser.should_calculate_hessian"><code class="docutils literal notranslate"><span class="pre">PRFOptimiser.should_calculate_hessian</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.BFGSDampedUpdate"><code class="docutils literal notranslate"><span class="pre">BFGSDampedUpdate</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.BFGSDampedUpdate._updated_h"><code class="docutils literal notranslate"><span class="pre">BFGSDampedUpdate._updated_h</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.BFGSPDUpdate"><code class="docutils literal notranslate"><span class="pre">BFGSPDUpdate</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.BFGSPDUpdate.__init__"><code class="docutils literal notranslate"><span class="pre">BFGSPDUpdate.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.BFGSPDUpdate.conditions_met"><code class="docutils literal notranslate"><span class="pre">BFGSPDUpdate.conditions_met</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.BFGSSR1Update"><code class="docutils literal notranslate"><span class="pre">BFGSSR1Update</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.BFGSSR1Update._updated_h"><code class="docutils literal notranslate"><span class="pre">BFGSSR1Update._updated_h</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.BFGSSR1Update._updated_h_inv"><code class="docutils literal notranslate"><span class="pre">BFGSSR1Update._updated_h_inv</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.BFGSSR1Update.conditions_met"><code class="docutils literal notranslate"><span class="pre">BFGSSR1Update.conditions_met</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.BFGSUpdate"><code class="docutils literal notranslate"><span class="pre">BFGSUpdate</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.BFGSUpdate._updated_h"><code class="docutils literal notranslate"><span class="pre">BFGSUpdate._updated_h</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.BFGSUpdate._updated_h_inv"><code class="docutils literal notranslate"><span class="pre">BFGSUpdate._updated_h_inv</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.BFGSUpdate.conditions_met"><code class="docutils literal notranslate"><span class="pre">BFGSUpdate.conditions_met</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.BofillUpdate"><code class="docutils literal notranslate"><span class="pre">BofillUpdate</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.BofillUpdate._updated_h"><code class="docutils literal notranslate"><span class="pre">BofillUpdate._updated_h</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.BofillUpdate._updated_h_inv"><code class="docutils literal notranslate"><span class="pre">BofillUpdate._updated_h_inv</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.BofillUpdate.conditions_met"><code class="docutils literal notranslate"><span class="pre">BofillUpdate.conditions_met</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.BofillUpdate.min_update_tol"><code class="docutils literal notranslate"><span class="pre">BofillUpdate.min_update_tol</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.FlowchartUpdate"><code class="docutils literal notranslate"><span class="pre">FlowchartUpdate</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.FlowchartUpdate._updated_h"><code class="docutils literal notranslate"><span class="pre">FlowchartUpdate._updated_h</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.FlowchartUpdate._updated_h_inv"><code class="docutils literal notranslate"><span class="pre">FlowchartUpdate._updated_h_inv</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.FlowchartUpdate.conditions_met"><code class="docutils literal notranslate"><span class="pre">FlowchartUpdate.conditions_met</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.HessianUpdater"><code class="docutils literal notranslate"><span class="pre">HessianUpdater</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.HessianUpdater.__init__"><code class="docutils literal notranslate"><span class="pre">HessianUpdater.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.HessianUpdater._updated_h"><code class="docutils literal notranslate"><span class="pre">HessianUpdater._updated_h</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.HessianUpdater._updated_h_inv"><code class="docutils literal notranslate"><span class="pre">HessianUpdater._updated_h_inv</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.HessianUpdater.conditions_met"><code class="docutils literal notranslate"><span class="pre">HessianUpdater.conditions_met</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.HessianUpdater.updated_h"><code class="docutils literal notranslate"><span class="pre">HessianUpdater.updated_h</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.HessianUpdater.updated_h_inv"><code class="docutils literal notranslate"><span class="pre">HessianUpdater.updated_h_inv</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.NullUpdate"><code class="docutils literal notranslate"><span class="pre">NullUpdate</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.NullUpdate._updated_h"><code class="docutils literal notranslate"><span class="pre">NullUpdate._updated_h</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.NullUpdate._updated_h_inv"><code class="docutils literal notranslate"><span class="pre">NullUpdate._updated_h_inv</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.NullUpdate.conditions_met"><code class="docutils literal notranslate"><span class="pre">NullUpdate.conditions_met</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.SR1Update"><code class="docutils literal notranslate"><span class="pre">SR1Update</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.SR1Update._updated_h"><code class="docutils literal notranslate"><span class="pre">SR1Update._updated_h</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.SR1Update._updated_h_inv"><code class="docutils literal notranslate"><span class="pre">SR1Update._updated_h_inv</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.SR1Update.conditions_met"><code class="docutils literal notranslate"><span class="pre">SR1Update.conditions_met</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.dimer.Dimer"><code class="docutils literal notranslate"><span class="pre">Dimer</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.dimer.Dimer.__init__"><code class="docutils literal notranslate"><span class="pre">Dimer.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.dimer.Dimer._step"><code class="docutils literal notranslate"><span class="pre">Dimer._step()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.dimer.Dimer.converged"><code class="docutils literal notranslate"><span class="pre">Dimer.converged</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.dimer.Dimer.optimise"><code class="docutils literal notranslate"><span class="pre">Dimer.optimise()</span></code></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-autode.opt.optimisers.base">
+<span id="optimisers"></span><h1>Optimisers<a class="headerlink" href="#module-autode.opt.optimisers.base" title="Link to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.BaseOptimiser">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">autode.opt.optimisers.base.</span></span><span class="sig-name descname"><span class="pre">BaseOptimiser</span></span><a class="headerlink" href="#autode.opt.optimisers.base.BaseOptimiser" title="Link to this definition">#</a></dt>
+<dd><p>Base abstract class for an optimiser</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.BaseOptimiser.converged">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">converged</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#autode.opt.optimisers.base.BaseOptimiser.converged" title="Link to this definition">#</a></dt>
+<dd><p>Has this optimisation converged</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.BaseOptimiser.final_coordinates">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">final_coordinates</span></span><a class="headerlink" href="#autode.opt.optimisers.base.BaseOptimiser.final_coordinates" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.BaseOptimiser.last_energy_change">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">last_energy_change</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../values.html#autode.values.PotentialEnergy" title="autode.values.PotentialEnergy"><span class="pre">PotentialEnergy</span></a></em><a class="headerlink" href="#autode.opt.optimisers.base.BaseOptimiser.last_energy_change" title="Link to this definition">#</a></dt>
+<dd><p>The energy change on between the final two optimisation cycles</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.BaseOptimiser.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#autode.opt.optimisers.base.BaseOptimiser.run" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.ExternalOptimiser">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">autode.opt.optimisers.base.</span></span><span class="sig-name descname"><span class="pre">ExternalOptimiser</span></span><a class="headerlink" href="#autode.opt.optimisers.base.ExternalOptimiser" title="Link to this definition">#</a></dt>
+<dd><dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.ExternalOptimiser.converged">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">converged</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#autode.opt.optimisers.base.ExternalOptimiser.converged" title="Link to this definition">#</a></dt>
+<dd><p>Has this optimisation has converged</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.ExternalOptimiser.last_energy_change">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">last_energy_change</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../values.html#autode.values.PotentialEnergy" title="autode.values.PotentialEnergy"><span class="pre">PotentialEnergy</span></a></em><a class="headerlink" href="#autode.opt.optimisers.base.ExternalOptimiser.last_energy_change" title="Link to this definition">#</a></dt>
+<dd><p>The final energy change in this optimisation</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.NDOptimiser">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">autode.opt.optimisers.base.</span></span><span class="sig-name descname"><span class="pre">NDOptimiser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">maxiter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gtol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../values.html#autode.values.GradientRMS" title="autode.values.GradientRMS"><span class="pre">GradientRMS</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">etol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../values.html#autode.values.PotentialEnergy" title="autode.values.PotentialEnergy"><span class="pre">PotentialEnergy</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">coords</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="coordinates.html#autode.opt.coordinates.base.OptCoordinates" title="autode.opt.coordinates.base.OptCoordinates"><span class="pre">OptCoordinates</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#autode.opt.optimisers.base.NDOptimiser" title="Link to this definition">#</a></dt>
+<dd><p>Abstract base class for an optimiser in N-dimensions</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.NDOptimiser.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">maxiter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gtol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../values.html#autode.values.GradientRMS" title="autode.values.GradientRMS"><span class="pre">GradientRMS</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">etol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../values.html#autode.values.PotentialEnergy" title="autode.values.PotentialEnergy"><span class="pre">PotentialEnergy</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">coords</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="coordinates.html#autode.opt.coordinates.base.OptCoordinates" title="autode.opt.coordinates.base.OptCoordinates"><span class="pre">OptCoordinates</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#autode.opt.optimisers.base.NDOptimiser.__init__" title="Link to this definition">#</a></dt>
+<dd><p>Geometry optimiser. Signature follows that in scipy.minimize so
+species and method are keyword arguments. Converged when both energy
+and gradient criteria are met.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gtol</strong> (<a class="reference internal" href="../values.html#autode.values.GradientRMS" title="autode.values.GradientRMS"><em>autode.values.GradientRMS</em></a>) – Tolerance on RMS(<a href="#id1"><span class="problematic" id="id2">|∇E|</span></a>)</p></li>
+<li><p><strong>etol</strong> (<a class="reference internal" href="../values.html#autode.values.PotentialEnergy" title="autode.values.PotentialEnergy"><em>autode.values.PotentialEnergy</em></a>) – Tolerance on <a href="#id3"><span class="problematic" id="id4">|E_i+1 - E_i|</span></a></p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#autode.opt.optimisers.base.Optimiser.__init__" title="autode.opt.optimisers.base.Optimiser.__init__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Optimiser</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.NDOptimiser.clean_up">
+<span class="sig-name descname"><span class="pre">clean_up</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#autode.opt.optimisers.base.NDOptimiser.clean_up" title="Link to this definition">#</a></dt>
+<dd><p>Clean up by removing the trajectory file on disk</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.NDOptimiser.converged">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">converged</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#autode.opt.optimisers.base.NDOptimiser.converged" title="Link to this definition">#</a></dt>
+<dd><p>Is this optimisation converged? Must be converged based on both energy
+and gradient tolerance.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.NDOptimiser.etol">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">etol</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../values.html#autode.values.PotentialEnergy" title="autode.values.PotentialEnergy"><span class="pre">PotentialEnergy</span></a></em><a class="headerlink" href="#autode.opt.optimisers.base.NDOptimiser.etol" title="Link to this definition">#</a></dt>
+<dd><p>Energy tolerance between two consecutive steps of the optimisation</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.NDOptimiser.from_file">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#autode.opt.optimisers.base.NDOptimiser" title="autode.opt.optimisers.base.NDOptimiser"><span class="pre">NDOptimiser</span></a></span></span><a class="headerlink" href="#autode.opt.optimisers.base.NDOptimiser.from_file" title="Link to this definition">#</a></dt>
+<dd><p>Create an optimiser from a trajectory file i.e. reload a saved state</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.NDOptimiser.gtol">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">gtol</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../values.html#autode.values.GradientRMS" title="autode.values.GradientRMS"><span class="pre">GradientRMS</span></a></em><a class="headerlink" href="#autode.opt.optimisers.base.NDOptimiser.gtol" title="Link to this definition">#</a></dt>
+<dd><p>Gradient tolerance on <a href="#id5"><span class="problematic" id="id6">|∇E|</span></a> i.e. the root mean square of each component</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.NDOptimiser.optimise">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">optimise</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">species:</span> <span class="pre">Species</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method:</span> <span class="pre">Method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_cores:</span> <span class="pre">int</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coords:</span> <span class="pre">~autode.opt.coordinates.base.OptCoordinates</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxiter:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gtol:</span> <span class="pre">~typing.Any</span> <span class="pre">=</span> <span class="pre">RMS(∇E)(0.001</span> <span class="pre">Ha(Å)^-1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">etol:</span> <span class="pre">~typing.Any</span> <span class="pre">=</span> <span class="pre">Energy(0.0001</span> <span class="pre">Ha)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#autode.opt.optimisers.base.NDOptimiser.optimise" title="Link to this definition">#</a></dt>
+<dd><p>Convenience function for constructing and running an optimiser</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>method</strong> (<em>autode.methods.Method</em>)</p></li>
+<li><p><strong>maxiter</strong> (<em>int</em>) – Maximum number of iteration to perform</p></li>
+<li><p><strong>gtol</strong> (<em>float</em><em> | </em><em>autode.values.GradientNorm</em>) – Tolerance on RMS(<a href="#id7"><span class="problematic" id="id8">|∇E|</span></a>)
+i.e. the root mean square of the gradient components. If
+a float then assume units of Ha Å^-1</p></li>
+<li><p><strong>etol</strong> (<em>float</em><em> | </em><a class="reference internal" href="../values.html#autode.values.PotentialEnergy" title="autode.values.PotentialEnergy"><em>autode.values.PotentialEnergy</em></a>) – Tolerance on <a href="#id9"><span class="problematic" id="id10">|∆E|</span></a>
+between two consecutive iterations of the optimiser</p></li>
+<li><p><strong>coords</strong> (<a class="reference internal" href="coordinates.html#autode.opt.coordinates.base.OptCoordinates" title="autode.opt.coordinates.base.OptCoordinates"><em>OptCoordinates</em></a><em> | </em><em>None</em>) – Coordinates to optimise in</p></li>
+<li><p><strong>n_cores</strong> (<em>int</em><em> | </em><em>None</em>) – Number of cores to run energy/gradient/hessian
+evaluations. If None then use ade.Config.n_cores</p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>) – Additional keyword arguments to pass to the
+constructor</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>(</strong><strong>ValueError</strong><strong> | </strong><strong>RuntimeError</strong><strong>)</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.NDOptimiser.optimiser_params">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">optimiser_params</span></span><a class="headerlink" href="#autode.opt.optimisers.base.NDOptimiser.optimiser_params" title="Link to this definition">#</a></dt>
+<dd><p>Optimiser params to save</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.NDOptimiser.plot_optimisation">
+<span class="sig-name descname"><span class="pre">plot_optimisation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_energy</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_rms_grad</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#autode.opt.optimisers.base.NDOptimiser.plot_optimisation" title="Link to this definition">#</a></dt>
+<dd><p>Draw the plot of the energies and/or rms_gradients of
+the optimisation so far</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>plot_energy</strong> (<em>bool</em>) – Whether to plot energy</p></li>
+<li><p><strong>plot_rms_grad</strong> (<em>bool</em>) – Whether to plot RMS of gradient</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.NDOptimiser.print_geometries">
+<span class="sig-name descname"><span class="pre">print_geometries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#autode.opt.optimisers.base.NDOptimiser.print_geometries" title="Link to this definition">#</a></dt>
+<dd><p>Writes the trajectory of the optimiser in .xyz format</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> (<em>str</em><em>|</em><em>None</em>) – Name of the trajectory file (xyz),
+if not given, generates name from species</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.NullOptimiser">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">autode.opt.optimisers.base.</span></span><span class="sig-name descname"><span class="pre">NullOptimiser</span></span><a class="headerlink" href="#autode.opt.optimisers.base.NullOptimiser" title="Link to this definition">#</a></dt>
+<dd><p>An optimiser that does nothing</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.NullOptimiser.converged">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">converged</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#autode.opt.optimisers.base.NullOptimiser.converged" title="Link to this definition">#</a></dt>
+<dd><p>Has this optimisation converged</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.NullOptimiser.final_coordinates">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">final_coordinates</span></span><a class="headerlink" href="#autode.opt.optimisers.base.NullOptimiser.final_coordinates" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.NullOptimiser.last_energy_change">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">last_energy_change</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../values.html#autode.values.PotentialEnergy" title="autode.values.PotentialEnergy"><span class="pre">PotentialEnergy</span></a></em><a class="headerlink" href="#autode.opt.optimisers.base.NullOptimiser.last_energy_change" title="Link to this definition">#</a></dt>
+<dd><p>The energy change on between the final two optimisation cycles</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.NullOptimiser.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#autode.opt.optimisers.base.NullOptimiser.run" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.Optimiser">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">autode.opt.optimisers.base.</span></span><span class="sig-name descname"><span class="pre">Optimiser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">maxiter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coords</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="coordinates.html#autode.opt.coordinates.base.OptCoordinates" title="autode.opt.coordinates.base.OptCoordinates"><span class="pre">OptCoordinates</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback_kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#autode.opt.optimisers.base.Optimiser" title="Link to this definition">#</a></dt>
+<dd><p>Abstract base class for an optimiser</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.Optimiser.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">maxiter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coords</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="coordinates.html#autode.opt.coordinates.base.OptCoordinates" title="autode.opt.coordinates.base.OptCoordinates"><span class="pre">OptCoordinates</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback_kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#autode.opt.optimisers.base.Optimiser.__init__" title="Link to this definition">#</a></dt>
+<dd><p>Optimiser</p>
+<blockquote>
+<div><p>e.g. CartesianCoordinates. If None then will initialise the
+coordinates from _species</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>callback</strong> – Function that will be called after every step. First
+called after initialisation and before the first step.
+Takes the current coordinates (which have energy (e),
+gradient (g) and hessian (h) attributes) as the only
+positional argument</p></li>
+<li><p><strong>callback_kwargs</strong> – Keyword arguments to pass to the callback function</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.Optimiser._step">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_step</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#autode.opt.optimisers.base.Optimiser._step" title="Link to this definition">#</a></dt>
+<dd><p>Take a step with this optimiser. Should only act on self._coords
+using the gradient (self._coords.g) and hessians (self._coords.h)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.Optimiser.converged">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">converged</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#autode.opt.optimisers.base.Optimiser.converged" title="Link to this definition">#</a></dt>
+<dd><p>Has this optimisation converged</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.Optimiser.final_coordinates">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">final_coordinates</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="coordinates.html#autode.opt.coordinates.base.OptCoordinates" title="autode.opt.coordinates.base.OptCoordinates"><span class="pre">OptCoordinates</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#autode.opt.optimisers.base.Optimiser.final_coordinates" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.Optimiser.iteration">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">iteration</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#autode.opt.optimisers.base.Optimiser.iteration" title="Link to this definition">#</a></dt>
+<dd><p>Iteration of the optimiser, which is equal to the length of the history
+minus one, for zero indexing.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.Optimiser.last_energy_change">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">last_energy_change</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../values.html#autode.values.PotentialEnergy" title="autode.values.PotentialEnergy"><span class="pre">PotentialEnergy</span></a></em><a class="headerlink" href="#autode.opt.optimisers.base.Optimiser.last_energy_change" title="Link to this definition">#</a></dt>
+<dd><p>Last ∆E found in this</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.Optimiser.optimise">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">optimise</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">species</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../species/species.html#autode.species.species.Species" title="autode.species.species.Species"><span class="pre">Species</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_cores</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coords</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="coordinates.html#autode.opt.coordinates.base.OptCoordinates" title="autode.opt.coordinates.base.OptCoordinates"><span class="pre">OptCoordinates</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#autode.opt.optimisers.base.Optimiser.optimise" title="Link to this definition">#</a></dt>
+<dd><p>Optimise a species using a method</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">autode</span> <span class="k">as</span> <span class="nn">ade</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">mol</span> <span class="o">=</span> <span class="n">ade</span><span class="o">.</span><span class="n">Molecule</span><span class="p">(</span><span class="n">smiles</span><span class="o">=</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Optimiser</span><span class="o">.</span><span class="n">optimise</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span><span class="n">method</span><span class="o">=</span><span class="n">ade</span><span class="o">.</span><span class="n">methods</span><span class="o">.</span><span class="n">ORCA</span><span class="p">())</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.Optimiser.optimiser_params">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">optimiser_params</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#autode.opt.optimisers.base.Optimiser.optimiser_params" title="Link to this definition">#</a></dt>
+<dd><p>The parameters which are needed to intialise the optimiser and
+will be saved in the optimiser trajectory</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.Optimiser.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">species</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../species/species.html#autode.species.species.Species" title="autode.species.species.Species"><span class="pre">Species</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_cores</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#autode.opt.optimisers.base.Optimiser.run" title="Link to this definition">#</a></dt>
+<dd><p>Run the optimiser. Updates species.atoms and species.energy</p>
+<blockquote>
+<div><p>Calculations will use method.keywords.grad for gradient
+calculations</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n_cores</strong> – Number of cores to use for calculations. If None then use
+autode.Config.n_cores</p></li>
+<li><p><strong>name</strong> – The name of the optimisation save file</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.OptimiserHistory">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">autode.opt.optimisers.base.</span></span><span class="sig-name descname"><span class="pre">OptimiserHistory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">maxlen</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#autode.opt.optimisers.base.OptimiserHistory" title="Link to this definition">#</a></dt>
+<dd><p>Sequential trajectory of coordinates with a maximum length for
+storage on memory. Shunts data to disk if trajectory file is
+opened, otherwise old coordinates more than the maximum number
+are lost.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.OptimiserHistory.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">maxlen</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#autode.opt.optimisers.base.OptimiserHistory.__init__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.OptimiserHistory.add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coords</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="coordinates.html#autode.opt.coordinates.base.OptCoordinates" title="autode.opt.coordinates.base.OptCoordinates"><span class="pre">OptCoordinates</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#autode.opt.optimisers.base.OptimiserHistory.add" title="Link to this definition">#</a></dt>
+<dd><p>Add a new set of coordinates to this trajectory</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>coords</strong> (<a class="reference internal" href="coordinates.html#autode.opt.coordinates.base.OptCoordinates" title="autode.opt.coordinates.base.OptCoordinates"><em>OptCoordinates</em></a>) – The set of coordinates to be added</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.OptimiserHistory.clean_up">
+<span class="sig-name descname"><span class="pre">clean_up</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#autode.opt.optimisers.base.OptimiserHistory.clean_up" title="Link to this definition">#</a></dt>
+<dd><p>Remove the disk file associated with this history</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.OptimiserHistory.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#autode.opt.optimisers.base.OptimiserHistory.close" title="Link to this definition">#</a></dt>
+<dd><p>Close the Optimiser history by putting the coordinates still
+in memory onto disk</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.OptimiserHistory.final">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">final</span></span><a class="headerlink" href="#autode.opt.optimisers.base.OptimiserHistory.final" title="Link to this definition">#</a></dt>
+<dd><p>Last set of coordinates in memory</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.OptimiserHistory.get_opt_params">
+<span class="sig-name descname"><span class="pre">get_opt_params</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#autode.opt.optimisers.base.OptimiserHistory.get_opt_params" title="Link to this definition">#</a></dt>
+<dd><p>Retrieve the stored optimiser parameters from the trajectory
+file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dictionary of optimiser parameters</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>(dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.OptimiserHistory.load">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#autode.opt.optimisers.base.OptimiserHistory.load" title="Link to this definition">#</a></dt>
+<dd><p>Reload the state of the trajectory from a file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> – The name of the trajectory .zip file,
+could also be a relative path</p>
+</dd>
+</dl>
+<p>Returns:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.OptimiserHistory.open">
+<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#autode.opt.optimisers.base.OptimiserHistory.open" title="Link to this definition">#</a></dt>
+<dd><p>Initialise the trajectory file and write it on disk.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – The name of the trajectory file,
+should be .zip, and NOT a path</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.OptimiserHistory.penultimate">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">penultimate</span></span><a class="headerlink" href="#autode.opt.optimisers.base.OptimiserHistory.penultimate" title="Link to this definition">#</a></dt>
+<dd><p>Last but one set of coordinates from memory (the penultimate set)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.OptimiserHistory.save_opt_params">
+<span class="sig-name descname"><span class="pre">save_opt_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#autode.opt.optimisers.base.OptimiserHistory.save_opt_params" title="Link to this definition">#</a></dt>
+<dd><p>Save optimiser parameters given as a dict into the trajectory
+savefile</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>params</strong> (<em>dict</em>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="autode.opt.optimisers.base.print_geometries_from">
+<span class="sig-prename descclassname"><span class="pre">autode.opt.optimisers.base.</span></span><span class="sig-name descname"><span class="pre">print_geometries_from</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coords_trj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="coordinates.html#autode.opt.coordinates.base.OptCoordinates" title="autode.opt.coordinates.base.OptCoordinates"><span class="pre">OptCoordinates</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#autode.opt.optimisers.base.OptimiserHistory" title="autode.opt.optimisers.base.OptimiserHistory"><span class="pre">OptimiserHistory</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">species</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../species/species.html#autode.species.species.Species" title="autode.species.species.Species"><span class="pre">Species</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#autode.opt.optimisers.base.print_geometries_from" title="Link to this definition">#</a></dt>
+<dd><p>Print geometries from an iterator over a series of coordinates</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>coords_trj</strong> – The iterator for coordinates, can be OptimiserHistory</p></li>
+<li><p><strong>species</strong> – The Species for which the coordinate history is generated</p></li>
+<li><p><strong>filename</strong> – Name of file</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<hr class="docutils" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<dl class="py class" id="module-autode.opt.optimisers.rfo">
+<dt class="sig sig-object py" id="autode.opt.optimisers.rfo.RFOptimiser">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">autode.opt.optimisers.rfo.</span></span><span class="sig-name descname"><span class="pre">RFOptimiser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_alpha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../values.html#autode.values.Distance" title="autode.values.Distance"><span class="pre">Distance</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#autode.opt.optimisers.rfo.RFOptimiser" title="Link to this definition">#</a></dt>
+<dd><p>Rational function optimisation in delocalised internal coordinates</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.opt.optimisers.rfo.RFOptimiser.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_alpha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../values.html#autode.values.Distance" title="autode.values.Distance"><span class="pre">Distance</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#autode.opt.optimisers.rfo.RFOptimiser.__init__" title="Link to this definition">#</a></dt>
+<dd><p>Rational function optimiser (RFO) using a maximum step size of alpha</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> – Additional arguments for <code class="docutils literal notranslate"><span class="pre">NDOptimiser</span></code></p></li>
+<li><p><strong>kwargs</strong> – Additional keywords arguments for <code class="docutils literal notranslate"><span class="pre">NDOptimiser</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#autode.opt.optimisers.base.NDOptimiser.__init__" title="autode.opt.optimisers.base.NDOptimiser.__init__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">NDOptimiser</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.opt.optimisers.rfo.RFOptimiser._step">
+<span class="sig-name descname"><span class="pre">_step</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#autode.opt.optimisers.rfo.RFOptimiser._step" title="Link to this definition">#</a></dt>
+<dd><p>RFO step</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<hr class="docutils" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p id="module-autode.opt.optimisers.prfo">Partitioned rational function optimisation</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="autode.opt.optimisers.prfo.PRFOptimiser">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">autode.opt.optimisers.prfo.</span></span><span class="sig-name descname"><span class="pre">PRFOptimiser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">init_alpha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../values.html#autode.values.Distance" title="autode.values.Distance"><span class="pre">Distance</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recalc_hessian_every</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#autode.opt.optimisers.prfo.PRFOptimiser" title="Link to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="autode.opt.optimisers.prfo.PRFOptimiser.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">init_alpha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../values.html#autode.values.Distance" title="autode.values.Distance"><span class="pre">Distance</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recalc_hessian_every</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#autode.opt.optimisers.prfo.PRFOptimiser.__init__" title="Link to this definition">#</a></dt>
+<dd><p>Partitioned rational function optimiser (PRFO) using a maximum step
+size of alpha trying to maximise along a mode while minimising along
+all others to locate a transition state (TS)</p>
+<blockquote>
+<div><p>the most imaginary mode (i.e. most negative
+eigenvalue)</p>
+</div></blockquote>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><code class="xref py py-meth docutils literal notranslate"><span class="pre">RFOOptimiser</span></code></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.opt.optimisers.prfo.PRFOptimiser._step">
+<span class="sig-name descname"><span class="pre">_step</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#autode.opt.optimisers.prfo.PRFOptimiser._step" title="Link to this definition">#</a></dt>
+<dd><p>Partitioned rational function step</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.prfo.PRFOptimiser.should_calculate_hessian">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">should_calculate_hessian</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#autode.opt.optimisers.prfo.PRFOptimiser.should_calculate_hessian" title="Link to this definition">#</a></dt>
+<dd><p>Should an explicit Hessian calculation be performed?</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<hr class="docutils" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<hr class="docutils" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<hr class="docutils" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<hr class="docutils" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<hr class="docutils" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<dl class="py class" id="module-autode.opt.optimisers.hessian_update">
+<dt class="sig sig-object py" id="autode.opt.optimisers.hessian_update.BFGSDampedUpdate">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">autode.opt.optimisers.hessian_update.</span></span><span class="sig-name descname"><span class="pre">BFGSDampedUpdate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_eigenvalue</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1e-05</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#autode.opt.optimisers.hessian_update.BFGSDampedUpdate" title="Link to this definition">#</a></dt>
+<dd><p>Powell damped BFGS update that ensures reasonable conditioning with the
+‘positive definite’ conditions still imposed</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.hessian_update.BFGSDampedUpdate._updated_h">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_updated_h</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span></em><a class="headerlink" href="#autode.opt.optimisers.hessian_update.BFGSDampedUpdate._updated_h" title="Link to this definition">#</a></dt>
+<dd><p>435–459
+(10.1007/s12532-016-0101-2)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Powell damped BFGS from</p>
+</dd>
+<dt class="field-even">Type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Math. Prog. Comp. (2016) 8</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="autode.opt.optimisers.hessian_update.BFGSPDUpdate">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">autode.opt.optimisers.hessian_update.</span></span><span class="sig-name descname"><span class="pre">BFGSPDUpdate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_eigenvalue</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1e-05</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#autode.opt.optimisers.hessian_update.BFGSPDUpdate" title="Link to this definition">#</a></dt>
+<dd><p>BFGS update while ensuring positive definiteness</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.opt.optimisers.hessian_update.BFGSPDUpdate.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_eigenvalue</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1e-05</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#autode.opt.optimisers.hessian_update.BFGSPDUpdate.__init__" title="Link to this definition">#</a></dt>
+<dd><p>Hessian updater</p>
+<dl class="field-list simple">
+<dt class="field-odd">Keyword Arguments<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>h_inv</strong> (<em>np.ndarray</em>) – Inverse Hessian (<span class="math notranslate nohighlight">\(H^{-1}\)</span>), shape = (N, N)</p></li>
+<li><p><strong>s</strong> (<em>np.ndarray</em>) – Coordinate shift. <span class="math notranslate nohighlight">\(s = R_{i+1} - R_i\)</span></p></li>
+<li><p><strong>y</strong> (<em>np.ndarray</em>) – Gradient shift.
+<span class="math notranslate nohighlight">\(y = \nabla E_{i+1} - \nabla E_i\)</span></p></li>
+<li><p><strong>subspace_idxs</strong> (<em>list</em><em>(</em><em>int</em><em>)</em>) – Indexes of the components of the
+hessian to update</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.hessian_update.BFGSPDUpdate.conditions_met">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">conditions_met</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#autode.opt.optimisers.hessian_update.BFGSPDUpdate.conditions_met" title="Link to this definition">#</a></dt>
+<dd><p>Are all the conditions met to update the Hessian</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="autode.opt.optimisers.hessian_update.BFGSSR1Update">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">autode.opt.optimisers.hessian_update.</span></span><span class="sig-name descname"><span class="pre">BFGSSR1Update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#autode.opt.optimisers.hessian_update.BFGSSR1Update" title="Link to this definition">#</a></dt>
+<dd><p>Interpolates between BFGS and SR1 update in a fashion similar
+to Bofill updates, but suited for minimisations. Proposed by
+Farkas and Schlegel in J. Chem. Phys., 111, 1999, 10806</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.hessian_update.BFGSSR1Update._updated_h">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_updated_h</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span></em><a class="headerlink" href="#autode.opt.optimisers.hessian_update.BFGSSR1Update._updated_h" title="Link to this definition">#</a></dt>
+<dd><p>Hybrid BFGS and SR1 update. The mixing parameter phi is defined
+as the square root of the (1 - phi_Bofill) used in Bofill update.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The updated hessian</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>(np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.hessian_update.BFGSSR1Update._updated_h_inv">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_updated_h_inv</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span></em><a class="headerlink" href="#autode.opt.optimisers.hessian_update.BFGSSR1Update._updated_h_inv" title="Link to this definition">#</a></dt>
+<dd><p>For BFGS-SR1 update, only hessian is available</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.hessian_update.BFGSSR1Update.conditions_met">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">conditions_met</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#autode.opt.optimisers.hessian_update.BFGSSR1Update.conditions_met" title="Link to this definition">#</a></dt>
+<dd><p>No conditions need to be satisfied for BFGS-SR1 update</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="autode.opt.optimisers.hessian_update.BFGSUpdate">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">autode.opt.optimisers.hessian_update.</span></span><span class="sig-name descname"><span class="pre">BFGSUpdate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#autode.opt.optimisers.hessian_update.BFGSUpdate" title="Link to this definition">#</a></dt>
+<dd><dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.hessian_update.BFGSUpdate._updated_h">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_updated_h</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span></em><a class="headerlink" href="#autode.opt.optimisers.hessian_update.BFGSUpdate._updated_h" title="Link to this definition">#</a></dt>
+<dd><p>Update the Hessian with a BFGS like update</p>
+<div class="math notranslate nohighlight">
+\[H_{new} = H + \frac{y y^T}{y^T s} - \frac{H s s^T H}
+                                         {s^T H s}\]</div>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.hessian_update.BFGSUpdate._updated_h_inv">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_updated_h_inv</span></span><a class="headerlink" href="#autode.opt.optimisers.hessian_update.BFGSUpdate._updated_h_inv" title="Link to this definition">#</a></dt>
+<dd><p>Sherman–Morrison inverse matrix update</p>
+<div class="math notranslate nohighlight">
+\[H_{new}^{-1} = H^{-1} +
+                \frac{(s^Ty + y^T H^{-1} y) s^T s}
+                     {s^T y} -
+                \frac{H^{-1} y s^T + s y^T H^{-1}}
+                     {s^T y}\]</div>
+<p>where <span class="math notranslate nohighlight">\(s = x_{l} - x_{l-1},\; \boldsymbol{y} =
+\nabla E_l - \nabla E_{l-1}\)</span>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.hessian_update.BFGSUpdate.conditions_met">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">conditions_met</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#autode.opt.optimisers.hessian_update.BFGSUpdate.conditions_met" title="Link to this definition">#</a></dt>
+<dd><p>BFGS update must meet the secant condition</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="autode.opt.optimisers.hessian_update.BofillUpdate">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">autode.opt.optimisers.hessian_update.</span></span><span class="sig-name descname"><span class="pre">BofillUpdate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#autode.opt.optimisers.hessian_update.BofillUpdate" title="Link to this definition">#</a></dt>
+<dd><p>Hessian update strategy suggested by Bofill[2] with notation taken from
+ref. [1].</p>
+<p>[1] V. Bakken, T. Helgaker, JCP, 117, 9160, 2002
+[2] J. M. Bofill, J. Comput. Chem., 15, 1, 1994</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.hessian_update.BofillUpdate._updated_h">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_updated_h</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span></em><a class="headerlink" href="#autode.opt.optimisers.hessian_update.BofillUpdate._updated_h" title="Link to this definition">#</a></dt>
+<dd><p>Bofill Hessian update, interpolating between MS and PBS update
+strategies. Follows ref. [1] where the notation is</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}h = \boldsymbol{G}_{i-1}\\y = \Delta\boldsymbol{g} = \boldsymbol{g}_i - \boldsymbol{g}_{i-1}\\s = \Delta\boldsymbol{x} = \boldsymbol{x}_i - \boldsymbol{x}_{i-1}\end{aligned}\end{align} \]</div>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.hessian_update.BofillUpdate._updated_h_inv">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_updated_h_inv</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span></em><a class="headerlink" href="#autode.opt.optimisers.hessian_update.BofillUpdate._updated_h_inv" title="Link to this definition">#</a></dt>
+<dd><p>Updated inverse Hessian is available only from the updated H</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.hessian_update.BofillUpdate.conditions_met">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">conditions_met</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#autode.opt.optimisers.hessian_update.BofillUpdate.conditions_met" title="Link to this definition">#</a></dt>
+<dd><p>No conditions are need to be satisfied to perform a Bofill update,
+apart from that on the shapes of the vectors</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="autode.opt.optimisers.hessian_update.BofillUpdate.min_update_tol">
+<span class="sig-name descname"><span class="pre">min_update_tol</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1e-06</span></em><a class="headerlink" href="#autode.opt.optimisers.hessian_update.BofillUpdate.min_update_tol" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="autode.opt.optimisers.hessian_update.FlowchartUpdate">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">autode.opt.optimisers.hessian_update.</span></span><span class="sig-name descname"><span class="pre">FlowchartUpdate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#autode.opt.optimisers.hessian_update.FlowchartUpdate" title="Link to this definition">#</a></dt>
+<dd><p>A hybrid update scheme combining BFGS, SR1 and PSB Hessian update
+formulae. Proposed in  A. B. Birkholz and H. B. Schlegel in
+Theor. Chem. Acc., 135 (84), 2016. This implementation is slightly
+modified.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.hessian_update.FlowchartUpdate._updated_h">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_updated_h</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span></em><a class="headerlink" href="#autode.opt.optimisers.hessian_update.FlowchartUpdate._updated_h" title="Link to this definition">#</a></dt>
+<dd><p>Flowchart (or FlowPSB) Hessian update scheme, that dynamically
+switches between BFGS and SR1 depending on some criteria.</p>
+<p>Alternatively switches to PSB update as a fallback if none of
+the criteria are satisfied. Notation follows A. B. Birkholz,
+H. B. Schlegel, Theor. Chem. Acc., 135 (84), 2016.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>H</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>(np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.hessian_update.FlowchartUpdate._updated_h_inv">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_updated_h_inv</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span></em><a class="headerlink" href="#autode.opt.optimisers.hessian_update.FlowchartUpdate._updated_h_inv" title="Link to this definition">#</a></dt>
+<dd><p>Flowchart update is only available for Hessian</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.hessian_update.FlowchartUpdate.conditions_met">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">conditions_met</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#autode.opt.optimisers.hessian_update.FlowchartUpdate.conditions_met" title="Link to this definition">#</a></dt>
+<dd><p>Flowchart update does not have any conditions, as
+update scheme is dynamically selected</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="autode.opt.optimisers.hessian_update.HessianUpdater">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">autode.opt.optimisers.hessian_update.</span></span><span class="sig-name descname"><span class="pre">HessianUpdater</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#autode.opt.optimisers.hessian_update.HessianUpdater" title="Link to this definition">#</a></dt>
+<dd><p>Update strategy for the (inverse) Hessian matrix</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.opt.optimisers.hessian_update.HessianUpdater.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#autode.opt.optimisers.hessian_update.HessianUpdater.__init__" title="Link to this definition">#</a></dt>
+<dd><p>Hessian updater</p>
+<dl class="field-list simple">
+<dt class="field-odd">Keyword Arguments<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>h_inv</strong> (<em>np.ndarray</em>) – Inverse Hessian (<span class="math notranslate nohighlight">\(H^{-1}\)</span>), shape = (N, N)</p></li>
+<li><p><strong>s</strong> (<em>np.ndarray</em>) – Coordinate shift. <span class="math notranslate nohighlight">\(s = R_{i+1} - R_i\)</span></p></li>
+<li><p><strong>y</strong> (<em>np.ndarray</em>) – Gradient shift.
+<span class="math notranslate nohighlight">\(y = \nabla E_{i+1} - \nabla E_i\)</span></p></li>
+<li><p><strong>subspace_idxs</strong> (<em>list</em><em>(</em><em>int</em><em>)</em>) – Indexes of the components of the
+hessian to update</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.hessian_update.HessianUpdater._updated_h">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_updated_h</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span></em><a class="headerlink" href="#autode.opt.optimisers.hessian_update.HessianUpdater._updated_h" title="Link to this definition">#</a></dt>
+<dd><p>Calculate H</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.hessian_update.HessianUpdater._updated_h_inv">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_updated_h_inv</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span></em><a class="headerlink" href="#autode.opt.optimisers.hessian_update.HessianUpdater._updated_h_inv" title="Link to this definition">#</a></dt>
+<dd><p>Calculate H^{-1}</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.hessian_update.HessianUpdater.conditions_met">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">conditions_met</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#autode.opt.optimisers.hessian_update.HessianUpdater.conditions_met" title="Link to this definition">#</a></dt>
+<dd><p>Are the conditions met to update the Hessian with this method?</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.hessian_update.HessianUpdater.updated_h">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">updated_h</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span></em><a class="headerlink" href="#autode.opt.optimisers.hessian_update.HessianUpdater.updated_h" title="Link to this definition">#</a></dt>
+<dd><p>Calculate H from a previous Hessian, coordinate shift and gradient
+shift</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>(</strong><strong>RuntimeError</strong><strong>)</strong> – If the update fails</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.hessian_update.HessianUpdater.updated_h_inv">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">updated_h_inv</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span></em><a class="headerlink" href="#autode.opt.optimisers.hessian_update.HessianUpdater.updated_h_inv" title="Link to this definition">#</a></dt>
+<dd><p>Calculate H^{-1} from a previous inverse Hessian, coordinate shift and
+gradient  shift</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>(</strong><strong>RuntimeError</strong><strong>)</strong> – If the update fails</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="autode.opt.optimisers.hessian_update.NullUpdate">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">autode.opt.optimisers.hessian_update.</span></span><span class="sig-name descname"><span class="pre">NullUpdate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#autode.opt.optimisers.hessian_update.NullUpdate" title="Link to this definition">#</a></dt>
+<dd><dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.hessian_update.NullUpdate._updated_h">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_updated_h</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span></em><a class="headerlink" href="#autode.opt.optimisers.hessian_update.NullUpdate._updated_h" title="Link to this definition">#</a></dt>
+<dd><p>Updated H is just the input Hessian</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.hessian_update.NullUpdate._updated_h_inv">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_updated_h_inv</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span></em><a class="headerlink" href="#autode.opt.optimisers.hessian_update.NullUpdate._updated_h_inv" title="Link to this definition">#</a></dt>
+<dd><p>Updated inverse H is just the input inverse Hessian</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.hessian_update.NullUpdate.conditions_met">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">conditions_met</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#autode.opt.optimisers.hessian_update.NullUpdate.conditions_met" title="Link to this definition">#</a></dt>
+<dd><p>Conditions are always met for a null optimiser</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="autode.opt.optimisers.hessian_update.SR1Update">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">autode.opt.optimisers.hessian_update.</span></span><span class="sig-name descname"><span class="pre">SR1Update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#autode.opt.optimisers.hessian_update.SR1Update" title="Link to this definition">#</a></dt>
+<dd><dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.hessian_update.SR1Update._updated_h">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_updated_h</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span></em><a class="headerlink" href="#autode.opt.optimisers.hessian_update.SR1Update._updated_h" title="Link to this definition">#</a></dt>
+<dd><p>Update H using a symmetric-rank 1 (SR1) update</p>
+<div class="math notranslate nohighlight">
+\[H_{new} = H + \frac{(y- Hs)(y - Hs)^T}
+                   {(y- Hs)^T s}\]</div>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.hessian_update.SR1Update._updated_h_inv">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_updated_h_inv</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span></em><a class="headerlink" href="#autode.opt.optimisers.hessian_update.SR1Update._updated_h_inv" title="Link to this definition">#</a></dt>
+<dd><p>Update H^-1 using a symmetric-rank 1 (SR1) update</p>
+<div class="math notranslate nohighlight">
+\[H_{new}^{-1} = H^{-1} + \frac{(s- H^{-1}y)(s - H^{-1}y)^T}
+                              {(s- Hy)^T y}\]</div>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.hessian_update.SR1Update.conditions_met">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">conditions_met</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#autode.opt.optimisers.hessian_update.SR1Update.conditions_met" title="Link to this definition">#</a></dt>
+<dd><p>Condition for SR1 update. See:
+<a class="reference external" href="https://en.wikipedia.org/wiki/Symmetric_rank-one">https://en.wikipedia.org/wiki/Symmetric_rank-one</a></p>
+<div class="math notranslate nohighlight">
+\[|s (y - Hs)| \ge r ||s|| \cdot ||y - Hs||\]</div>
+<p>where <span class="math notranslate nohighlight">\(r \in (0, 1)\)</span> = 1E-8.</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<hr class="docutils" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p id="module-autode.opt.optimisers.dimer">Dimer method for finding transition states given two points on the PES.
+Notation follows
+1. <a class="reference external" href="https://aip.scitation.org/doi/10.1063/1.2815812">https://aip.scitation.org/doi/10.1063/1.2815812</a>
+based on
+2. <a class="reference external" href="https://aip.scitation.org/doi/10.1063/1.2104507">https://aip.scitation.org/doi/10.1063/1.2104507</a>
+3. <a class="reference external" href="https://aip.scitation.org/doi/10.1063/1.480097">https://aip.scitation.org/doi/10.1063/1.480097</a></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="autode.opt.optimisers.dimer.Dimer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">autode.opt.optimisers.dimer.</span></span><span class="sig-name descname"><span class="pre">Dimer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">maxiter:</span> <span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coords:</span> <span class="pre">~autode.opt.coordinates.dimer.DimerCoordinates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ratio_rot_iters:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gtol:</span> <span class="pre">float</span> <span class="pre">|</span> <span class="pre">~autode.values.GradientRMS</span> <span class="pre">=</span> <span class="pre">RMS(∇E)(0.001</span> <span class="pre">Ha(Å)^-1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trns_tol:</span> <span class="pre">~autode.values.MWDistance</span> <span class="pre">=</span> <span class="pre">Mass-weighted</span> <span class="pre">Distance(0.001</span> <span class="pre">Å</span> <span class="pre">amu^1/2)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phi_tol:</span> <span class="pre">~autode.values.Angle</span> <span class="pre">=</span> <span class="pre">Angle(5.0</span> <span class="pre">°)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_alpha:</span> <span class="pre">~autode.values.MWDistance</span> <span class="pre">=</span> <span class="pre">Mass-weighted</span> <span class="pre">Distance(0.3</span> <span class="pre">Å</span> <span class="pre">amu^1/2)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#autode.opt.optimisers.dimer.Dimer" title="Link to this definition">#</a></dt>
+<dd><p>Dimer spanning two points on the PES with a TS at the midpoint</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.opt.optimisers.dimer.Dimer.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">maxiter:</span> <span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coords:</span> <span class="pre">~autode.opt.coordinates.dimer.DimerCoordinates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ratio_rot_iters:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gtol:</span> <span class="pre">float</span> <span class="pre">|</span> <span class="pre">~autode.values.GradientRMS</span> <span class="pre">=</span> <span class="pre">RMS(∇E)(0.001</span> <span class="pre">Ha(Å)^-1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trns_tol:</span> <span class="pre">~autode.values.MWDistance</span> <span class="pre">=</span> <span class="pre">Mass-weighted</span> <span class="pre">Distance(0.001</span> <span class="pre">Å</span> <span class="pre">amu^1/2)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phi_tol:</span> <span class="pre">~autode.values.Angle</span> <span class="pre">=</span> <span class="pre">Angle(5.0</span> <span class="pre">°)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_alpha:</span> <span class="pre">~autode.values.MWDistance</span> <span class="pre">=</span> <span class="pre">Mass-weighted</span> <span class="pre">Distance(0.3</span> <span class="pre">Å</span> <span class="pre">amu^1/2)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#autode.opt.optimisers.dimer.Dimer.__init__" title="Link to this definition">#</a></dt>
+<dd><p>Dimer optimiser</p>
+<blockquote>
+<div><p>the interpolated midpoint</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ratio_rot_iters</strong> – Number of rotations per translation in each
+dimer step</p></li>
+<li><p><strong>gtol</strong> – Tolerance on the gradient at the midpoint for convergence</p></li>
+<li><p><strong>trns_tol</strong> – Tolerance on the minimum root mean square translation
+distance, below which convergence is signaled</p></li>
+<li><p><strong>phi_tol</strong> – Tolerance on the rotation angle below which rotation is
+not performed</p></li>
+<li><p><strong>init_alpha</strong> – Initial step size to use in mass-weighted cartesian
+coordinates</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.opt.optimisers.dimer.Dimer._step">
+<span class="sig-name descname"><span class="pre">_step</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#autode.opt.optimisers.dimer.Dimer._step" title="Link to this definition">#</a></dt>
+<dd><p>Do a single dimer optimisation step, consisting of several rotation and
+translation steps.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.opt.optimisers.dimer.Dimer.converged">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">converged</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#autode.opt.optimisers.dimer.Dimer.converged" title="Link to this definition">#</a></dt>
+<dd><p>Has the dimer converged?</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.opt.optimisers.dimer.Dimer.optimise">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">optimise</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">species</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../species/species.html#autode.species.species.Species" title="autode.species.species.Species"><span class="pre">Species</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_cores</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coords</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="coordinates.html#autode.opt.coordinates.dimer.DimerCoordinates" title="autode.opt.coordinates.dimer.DimerCoordinates"><span class="pre">DimerCoordinates</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#autode.opt.optimisers.dimer.Dimer.optimise" title="Link to this definition">#</a></dt>
+<dd><p>Optimise a dimer pair of coordinates such that the species coordinates
+are close to a transition state</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n_cores</strong> – Number of cores to use for the optimisation</p></li>
+<li><p><strong>coords</strong> – Dimer coordinates</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="coordinates.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Coordinates</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../bond_rearrangement.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Bond Rearrangement</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.BaseOptimiser"><code class="docutils literal notranslate"><span class="pre">BaseOptimiser</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.BaseOptimiser.converged"><code class="docutils literal notranslate"><span class="pre">BaseOptimiser.converged</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.BaseOptimiser.final_coordinates"><code class="docutils literal notranslate"><span class="pre">BaseOptimiser.final_coordinates</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.BaseOptimiser.last_energy_change"><code class="docutils literal notranslate"><span class="pre">BaseOptimiser.last_energy_change</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.BaseOptimiser.run"><code class="docutils literal notranslate"><span class="pre">BaseOptimiser.run()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.ExternalOptimiser"><code class="docutils literal notranslate"><span class="pre">ExternalOptimiser</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.ExternalOptimiser.converged"><code class="docutils literal notranslate"><span class="pre">ExternalOptimiser.converged</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.ExternalOptimiser.last_energy_change"><code class="docutils literal notranslate"><span class="pre">ExternalOptimiser.last_energy_change</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.NDOptimiser"><code class="docutils literal notranslate"><span class="pre">NDOptimiser</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.NDOptimiser.__init__"><code class="docutils literal notranslate"><span class="pre">NDOptimiser.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.NDOptimiser.clean_up"><code class="docutils literal notranslate"><span class="pre">NDOptimiser.clean_up()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.NDOptimiser.converged"><code class="docutils literal notranslate"><span class="pre">NDOptimiser.converged</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.NDOptimiser.etol"><code class="docutils literal notranslate"><span class="pre">NDOptimiser.etol</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.NDOptimiser.from_file"><code class="docutils literal notranslate"><span class="pre">NDOptimiser.from_file()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.NDOptimiser.gtol"><code class="docutils literal notranslate"><span class="pre">NDOptimiser.gtol</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.NDOptimiser.optimise"><code class="docutils literal notranslate"><span class="pre">NDOptimiser.optimise()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.NDOptimiser.optimiser_params"><code class="docutils literal notranslate"><span class="pre">NDOptimiser.optimiser_params</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.NDOptimiser.plot_optimisation"><code class="docutils literal notranslate"><span class="pre">NDOptimiser.plot_optimisation()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.NDOptimiser.print_geometries"><code class="docutils literal notranslate"><span class="pre">NDOptimiser.print_geometries()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.NullOptimiser"><code class="docutils literal notranslate"><span class="pre">NullOptimiser</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.NullOptimiser.converged"><code class="docutils literal notranslate"><span class="pre">NullOptimiser.converged</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.NullOptimiser.final_coordinates"><code class="docutils literal notranslate"><span class="pre">NullOptimiser.final_coordinates</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.NullOptimiser.last_energy_change"><code class="docutils literal notranslate"><span class="pre">NullOptimiser.last_energy_change</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.NullOptimiser.run"><code class="docutils literal notranslate"><span class="pre">NullOptimiser.run()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.Optimiser"><code class="docutils literal notranslate"><span class="pre">Optimiser</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.Optimiser.__init__"><code class="docutils literal notranslate"><span class="pre">Optimiser.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.Optimiser._step"><code class="docutils literal notranslate"><span class="pre">Optimiser._step()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.Optimiser.converged"><code class="docutils literal notranslate"><span class="pre">Optimiser.converged</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.Optimiser.final_coordinates"><code class="docutils literal notranslate"><span class="pre">Optimiser.final_coordinates</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.Optimiser.iteration"><code class="docutils literal notranslate"><span class="pre">Optimiser.iteration</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.Optimiser.last_energy_change"><code class="docutils literal notranslate"><span class="pre">Optimiser.last_energy_change</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.Optimiser.optimise"><code class="docutils literal notranslate"><span class="pre">Optimiser.optimise()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.Optimiser.optimiser_params"><code class="docutils literal notranslate"><span class="pre">Optimiser.optimiser_params</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.Optimiser.run"><code class="docutils literal notranslate"><span class="pre">Optimiser.run()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.OptimiserHistory"><code class="docutils literal notranslate"><span class="pre">OptimiserHistory</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.OptimiserHistory.__init__"><code class="docutils literal notranslate"><span class="pre">OptimiserHistory.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.OptimiserHistory.add"><code class="docutils literal notranslate"><span class="pre">OptimiserHistory.add()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.OptimiserHistory.clean_up"><code class="docutils literal notranslate"><span class="pre">OptimiserHistory.clean_up()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.OptimiserHistory.close"><code class="docutils literal notranslate"><span class="pre">OptimiserHistory.close()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.OptimiserHistory.final"><code class="docutils literal notranslate"><span class="pre">OptimiserHistory.final</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.OptimiserHistory.get_opt_params"><code class="docutils literal notranslate"><span class="pre">OptimiserHistory.get_opt_params()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.OptimiserHistory.load"><code class="docutils literal notranslate"><span class="pre">OptimiserHistory.load()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.OptimiserHistory.open"><code class="docutils literal notranslate"><span class="pre">OptimiserHistory.open()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.OptimiserHistory.penultimate"><code class="docutils literal notranslate"><span class="pre">OptimiserHistory.penultimate</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.OptimiserHistory.save_opt_params"><code class="docutils literal notranslate"><span class="pre">OptimiserHistory.save_opt_params()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.base.print_geometries_from"><code class="docutils literal notranslate"><span class="pre">print_geometries_from()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.rfo.RFOptimiser"><code class="docutils literal notranslate"><span class="pre">RFOptimiser</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.rfo.RFOptimiser.__init__"><code class="docutils literal notranslate"><span class="pre">RFOptimiser.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.rfo.RFOptimiser._step"><code class="docutils literal notranslate"><span class="pre">RFOptimiser._step()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.prfo.PRFOptimiser"><code class="docutils literal notranslate"><span class="pre">PRFOptimiser</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.prfo.PRFOptimiser.__init__"><code class="docutils literal notranslate"><span class="pre">PRFOptimiser.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.prfo.PRFOptimiser._step"><code class="docutils literal notranslate"><span class="pre">PRFOptimiser._step()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.prfo.PRFOptimiser.should_calculate_hessian"><code class="docutils literal notranslate"><span class="pre">PRFOptimiser.should_calculate_hessian</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.BFGSDampedUpdate"><code class="docutils literal notranslate"><span class="pre">BFGSDampedUpdate</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.BFGSDampedUpdate._updated_h"><code class="docutils literal notranslate"><span class="pre">BFGSDampedUpdate._updated_h</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.BFGSPDUpdate"><code class="docutils literal notranslate"><span class="pre">BFGSPDUpdate</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.BFGSPDUpdate.__init__"><code class="docutils literal notranslate"><span class="pre">BFGSPDUpdate.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.BFGSPDUpdate.conditions_met"><code class="docutils literal notranslate"><span class="pre">BFGSPDUpdate.conditions_met</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.BFGSSR1Update"><code class="docutils literal notranslate"><span class="pre">BFGSSR1Update</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.BFGSSR1Update._updated_h"><code class="docutils literal notranslate"><span class="pre">BFGSSR1Update._updated_h</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.BFGSSR1Update._updated_h_inv"><code class="docutils literal notranslate"><span class="pre">BFGSSR1Update._updated_h_inv</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.BFGSSR1Update.conditions_met"><code class="docutils literal notranslate"><span class="pre">BFGSSR1Update.conditions_met</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.BFGSUpdate"><code class="docutils literal notranslate"><span class="pre">BFGSUpdate</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.BFGSUpdate._updated_h"><code class="docutils literal notranslate"><span class="pre">BFGSUpdate._updated_h</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.BFGSUpdate._updated_h_inv"><code class="docutils literal notranslate"><span class="pre">BFGSUpdate._updated_h_inv</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.BFGSUpdate.conditions_met"><code class="docutils literal notranslate"><span class="pre">BFGSUpdate.conditions_met</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.BofillUpdate"><code class="docutils literal notranslate"><span class="pre">BofillUpdate</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.BofillUpdate._updated_h"><code class="docutils literal notranslate"><span class="pre">BofillUpdate._updated_h</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.BofillUpdate._updated_h_inv"><code class="docutils literal notranslate"><span class="pre">BofillUpdate._updated_h_inv</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.BofillUpdate.conditions_met"><code class="docutils literal notranslate"><span class="pre">BofillUpdate.conditions_met</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.BofillUpdate.min_update_tol"><code class="docutils literal notranslate"><span class="pre">BofillUpdate.min_update_tol</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.FlowchartUpdate"><code class="docutils literal notranslate"><span class="pre">FlowchartUpdate</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.FlowchartUpdate._updated_h"><code class="docutils literal notranslate"><span class="pre">FlowchartUpdate._updated_h</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.FlowchartUpdate._updated_h_inv"><code class="docutils literal notranslate"><span class="pre">FlowchartUpdate._updated_h_inv</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.FlowchartUpdate.conditions_met"><code class="docutils literal notranslate"><span class="pre">FlowchartUpdate.conditions_met</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.HessianUpdater"><code class="docutils literal notranslate"><span class="pre">HessianUpdater</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.HessianUpdater.__init__"><code class="docutils literal notranslate"><span class="pre">HessianUpdater.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.HessianUpdater._updated_h"><code class="docutils literal notranslate"><span class="pre">HessianUpdater._updated_h</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.HessianUpdater._updated_h_inv"><code class="docutils literal notranslate"><span class="pre">HessianUpdater._updated_h_inv</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.HessianUpdater.conditions_met"><code class="docutils literal notranslate"><span class="pre">HessianUpdater.conditions_met</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.HessianUpdater.updated_h"><code class="docutils literal notranslate"><span class="pre">HessianUpdater.updated_h</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.HessianUpdater.updated_h_inv"><code class="docutils literal notranslate"><span class="pre">HessianUpdater.updated_h_inv</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.NullUpdate"><code class="docutils literal notranslate"><span class="pre">NullUpdate</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.NullUpdate._updated_h"><code class="docutils literal notranslate"><span class="pre">NullUpdate._updated_h</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.NullUpdate._updated_h_inv"><code class="docutils literal notranslate"><span class="pre">NullUpdate._updated_h_inv</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.NullUpdate.conditions_met"><code class="docutils literal notranslate"><span class="pre">NullUpdate.conditions_met</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.SR1Update"><code class="docutils literal notranslate"><span class="pre">SR1Update</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.SR1Update._updated_h"><code class="docutils literal notranslate"><span class="pre">SR1Update._updated_h</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.SR1Update._updated_h_inv"><code class="docutils literal notranslate"><span class="pre">SR1Update._updated_h_inv</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.hessian_update.SR1Update.conditions_met"><code class="docutils literal notranslate"><span class="pre">SR1Update.conditions_met</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.dimer.Dimer"><code class="docutils literal notranslate"><span class="pre">Dimer</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.dimer.Dimer.__init__"><code class="docutils literal notranslate"><span class="pre">Dimer.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.dimer.Dimer._step"><code class="docutils literal notranslate"><span class="pre">Dimer._step()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.dimer.Dimer.converged"><code class="docutils literal notranslate"><span class="pre">Dimer.converged</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.opt.optimisers.dimer.Dimer.optimise"><code class="docutils literal notranslate"><span class="pre">Dimer.optimise()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Tom Young, Joseph Silcock
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2020-2021, Tom Young, Joseph Silcock.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

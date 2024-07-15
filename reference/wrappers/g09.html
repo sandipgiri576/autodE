@@ -1,116 +1,235 @@
 
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Gaussian09 &mdash; autodE  documentation</title>
-  
 
-  
-  
-  
-  
+<html lang="en" data-content_root="../../" >
 
-  
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    
+    <title>Gaussian09 &#8212; autodE  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/wrappers/g09';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Keywords" href="keywords.html" />
-    <link rel="prev" title="Base" href="base.html" /> 
-</head>
+    <link rel="prev" title="Base" href="base.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-<body class="wy-body-for-nav">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-   
-  <div class="wy-grid-for-nav">
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-          
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
 
-          
-            <a href="../../index.html" class="icon icon-home"> autodE
-          
-
-          
-          </a>
-
-          
-            
-            
-              <div class="version">
-                1.0.4
-              </div>
-            
-          
-
-          
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
 
-          
-        </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
 
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <ul class="current">
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">autodE  documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../install.html">Install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../quickstart.html">Quick Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../config.html">Configuration</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Reference</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../conformers/index.html">Conformers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../pes/index.html">PES</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../reactions/index.html">Reactions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../smiles/index.html">SMILES</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../solvent/index.html">Solvent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../species/index.html">Species</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../transition_states/index.html">Transition States</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">Wrappers</a><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Reference</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../atoms.html">Atoms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bonds.html">Bonds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculation.html">Calculation</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../conformers/index.html">Conformers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../conformers/conf_gen.html">Conf Gen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../conformers/conformer.html">Conformer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../conformers/conformers.html">Conformers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../pes/index.html">PES</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../pes/pes.html">Potential Energy Surfaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pes/mep.html">Min Energy Pathway</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../reactions/index.html">Reactions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../reactions/multistep.html">Multistep Reaction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reactions/reaction.html">Reaction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reactions/reaction_types.html">Reaction Types</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../smiles/index.html">SMILES</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../smiles/smiles.html">Molecules from SMILES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smiles/parser.html">SMILES Parser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smiles/builder.html">3D Geometry Builder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smiles/atom_types.html">SMILES Atom Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smiles/angles.html">SMILES Angles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smiles/base.html">SMILES Base</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../solvent/index.html">Solvent</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solvent/solvents.html">Solvents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solvent/explicit_solvent.html">Explicit Solvent</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../species/index.html">Species</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../species/complex.html">Complex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../species/molecule.html">Molecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../species/species.html">Species</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../neb/index.html">Nudged elastic band</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../neb/neb.html">NEB Transition states</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../neb/original.html">Original NEB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../neb/ci.html">Climbing image NEB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../neb/idpp.html">Image dependent pair potential</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../transition_states/index.html">Transition States</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../transition_states/base.html">Base</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../transition_states/locate_tss.html">Locate TSs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../transition_states/templates.html">Templates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../transition_states/transition_state.html">Transition State</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../transition_states/truncation.html">Truncation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../transition_states/ts_guess.html">TS Guess</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../thermochemistry/index.html">Thermochemistry</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../thermochemistry/igm.html">Ideal gas model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../thermochemistry/symmetry.html">Symmetry</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">Wrappers</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="base.html">Base</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Gaussian09</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Gaussian09</a></li>
 <li class="toctree-l3"><a class="reference internal" href="keywords.html">Keywords</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mopac.html">MOPAC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="nwchem.html">NWChem</a></li>
 <li class="toctree-l3"><a class="reference internal" href="orca.html">ORCA</a></li>
 <li class="toctree-l3"><a class="reference internal" href="xtb.html">XTB</a></li>
 </ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../atoms.html">Atoms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../bond_lengths.html">Bonds</a></li>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../opt/index.html">Optimisation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../opt/coordinates.html">Coordinates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../opt/optimisers.html">Optimisers</a></li>
+</ul>
+</details></li>
 <li class="toctree-l2"><a class="reference internal" href="../bond_rearrangement.html">Bond Rearrangement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../calculation.html">Calculation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../config.html">Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../constants.html">Constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../exceptions.html">Exceptions</a></li>
@@ -124,419 +243,455 @@
 <li class="toctree-l2"><a class="reference internal" href="../substitution.html">Substitution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../units.html">Units</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../utils.html">Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../values.html">Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hessians.html">Hessians</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../examples/index.html">Examples</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/species.html">Species</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/molecules.html">Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/reactions.html">Reactions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/nci.html">Non-covalent Interaction Complexes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/manipulation.html">Molecular Manipulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/pes1d.html">1D PES Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/pes2d.html">2D PES Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/conformers.html">Conformer Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/rmsd.html">RMSD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/tss.html">Transition States</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/thermochem.html">Thermochemistry</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../dev/index.html">Development</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../dev/overview.html">Code Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../dev/contributing.html">Contributing to autodE</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../citation.html">Citation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1002/anie.202011941">Paper</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/reference/wrappers/g09.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Gaussian09</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.wrappers.G09.G09"><code class="docutils literal notranslate"><span class="pre">G09</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.wrappers.G09.G09.__init__"><code class="docutils literal notranslate"><span class="pre">G09.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.wrappers.G09.G09.coordinates_from"><code class="docutils literal notranslate"><span class="pre">G09.coordinates_from()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.wrappers.G09.G09.execute"><code class="docutils literal notranslate"><span class="pre">G09.execute()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.wrappers.G09.G09.generate_input_for"><code class="docutils literal notranslate"><span class="pre">G09.generate_input_for()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.wrappers.G09.G09.gradient_from"><code class="docutils literal notranslate"><span class="pre">G09.gradient_from()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.wrappers.G09.G09.hessian_from"><code class="docutils literal notranslate"><span class="pre">G09.hessian_from()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.wrappers.G09.G09.input_filename_for"><code class="docutils literal notranslate"><span class="pre">G09.input_filename_for()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.wrappers.G09.G09.optimiser_from"><code class="docutils literal notranslate"><span class="pre">G09.optimiser_from()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.wrappers.G09.G09.output_filename_for"><code class="docutils literal notranslate"><span class="pre">G09.output_filename_for()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.wrappers.G09.G09.partial_charges_from"><code class="docutils literal notranslate"><span class="pre">G09.partial_charges_from()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.wrappers.G09.G09.terminated_normally_in"><code class="docutils literal notranslate"><span class="pre">G09.terminated_normally_in()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.wrappers.G09.G09.version_in"><code class="docutils literal notranslate"><span class="pre">G09.version_in()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting.html">Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../examples/index.html">Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../citation.html">Citation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.wrappers.G09.G09Optimiser"><code class="docutils literal notranslate"><span class="pre">G09Optimiser</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.wrappers.G09.G09Optimiser.__init__"><code class="docutils literal notranslate"><span class="pre">G09Optimiser.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.wrappers.G09.G09Optimiser.converged"><code class="docutils literal notranslate"><span class="pre">G09Optimiser.converged</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.wrappers.G09.G09Optimiser.last_energy_change"><code class="docutils literal notranslate"><span class="pre">G09Optimiser.last_energy_change</span></code></a></li>
 </ul>
-
-            
-          
+</li>
+</ul>
+            </nav>
         </div>
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">autodE</a>
-        
-      </nav>
-
-
-      <div class="wy-nav-content">
-        
-        <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
-  <ul class="wy-breadcrumbs">
-    
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
-        
-          <li><a href="../index.html">Reference</a> &raquo;</li>
-        
-          <li><a href="index.html">Wrappers</a> &raquo;</li>
-        
-      <li>Gaussian09</li>
-    
-    
-      <li class="wy-breadcrumbs-aside">
-        
-            
-            <a href="../../_sources/reference/wrappers/g09.rst.txt" rel="nofollow"> View page source</a>
-          
-        
-      </li>
-    
-  </ul>
-
-  
-  <hr/>
+    </div>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-            
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section id="module-autode.wrappers.G09">
-<span id="gaussian09"></span><h1>Gaussian09<a class="headerlink" href="#module-autode.wrappers.G09" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
-<dt id="autode.wrappers.G09.G09">
-<em class="property">class </em><code class="sig-prename descclassname">autode.wrappers.G09.</code><code class="sig-name descname">G09</code><span class="sig-paren">(</span><em class="sig-param">name='g09'</em>, <em class="sig-param">path=None</em>, <em class="sig-param">keywords_set=None</em>, <em class="sig-param">implicit_solvation_type=None</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.wrappers.G09.G09" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
-<dt id="autode.wrappers.G09.G09.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">name='g09'</em>, <em class="sig-param">path=None</em>, <em class="sig-param">keywords_set=None</em>, <em class="sig-param">implicit_solvation_type=None</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.wrappers.G09.G09.__init__" title="Permalink to this definition">¶</a></dt>
+<span id="gaussian09"></span><h1>Gaussian09<a class="headerlink" href="#module-autode.wrappers.G09" title="Link to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="autode.wrappers.G09.G09">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">autode.wrappers.G09.</span></span><span class="sig-name descname"><span class="pre">G09</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">executable_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'g09'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keywords_set</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">implicit_solvation_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#autode.wrappers.G09.G09" title="Link to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="autode.wrappers.G09.G09.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">executable_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'g09'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keywords_set</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">implicit_solvation_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#autode.wrappers.G09.G09.__init__" title="Link to this definition">#</a></dt>
 <dd><p>Gaussian 09</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="autode.wrappers.G09.G09.calculation_terminated_normally">
-<code class="sig-name descname">calculation_terminated_normally</code><span class="sig-paren">(</span><em class="sig-param">calc</em>, <em class="sig-param">rerun_if_failed=True</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.wrappers.G09.G09.calculation_terminated_normally" title="Permalink to this definition">¶</a></dt>
-<dd><p>Did the calculation terminate correctly?</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>calc</strong> (<a class="reference internal" href="../calculation.html#autode.calculation.Calculation" title="autode.calculation.Calculation"><em>autode.calculation.Calculation</em></a>) – </p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p></p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>(bool)</p>
-</dd>
-</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.wrappers.G09.G09.coordinates_from">
+<span class="sig-name descname"><span class="pre">coordinates_from</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">calc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">CalculationExecutor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../values.html#autode.values.Coordinates" title="autode.values.Coordinates"><span class="pre">Coordinates</span></a></span></span><a class="headerlink" href="#autode.wrappers.G09.G09.coordinates_from" title="Link to this definition">#</a></dt>
+<dd><p>Get the final set of coordinates from a G09 output</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="autode.wrappers.G09.G09.execute">
-<code class="sig-name descname">execute</code><span class="sig-paren">(</span><em class="sig-param">calc</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.wrappers.G09.G09.execute" title="Permalink to this definition">¶</a></dt>
-<dd><p>Execute the calculation</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>calc</strong> (<a class="reference internal" href="../calculation.html#autode.calculation.Calculation" title="autode.calculation.Calculation"><em>autode.calculation.Calculation</em></a>) – </p>
-</dd>
-</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.wrappers.G09.G09.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">calc</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#autode.wrappers.G09.G09.execute" title="Link to this definition">#</a></dt>
+<dd><p>Run this calculation and generate an output file</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="autode.wrappers.G09.G09.generate_input">
-<code class="sig-name descname">generate_input</code><span class="sig-paren">(</span><em class="sig-param">calc</em>, <em class="sig-param">molecule</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.wrappers.G09.G09.generate_input" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.wrappers.G09.G09.generate_input_for">
+<span class="sig-name descname"><span class="pre">generate_input_for</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">calc</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#autode.wrappers.G09.G09.generate_input_for" title="Link to this definition">#</a></dt>
 <dd><p>Print a Gaussian input file</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="autode.wrappers.G09.G09.get_atomic_charges">
-<code class="sig-name descname">get_atomic_charges</code><span class="sig-paren">(</span><em class="sig-param">calc</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.wrappers.G09.G09.get_atomic_charges" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function implemented in individual child classes</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>calc</strong> (<a class="reference internal" href="../calculation.html#autode.calculation.Calculation" title="autode.calculation.Calculation"><em>autode.calculation.Calculation</em></a>) – </p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p></p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>(list(float))</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="autode.wrappers.G09.G09.get_energy">
-<code class="sig-name descname">get_energy</code><span class="sig-paren">(</span><em class="sig-param">calc</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.wrappers.G09.G09.get_energy" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the potential energy</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>calc</strong> (<a class="reference internal" href="../calculation.html#autode.calculation.Calculation" title="autode.calculation.Calculation"><em>autode.calculation.Calculation</em></a>) – </p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p></p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>(float | None)</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="autode.wrappers.G09.G09.get_enthalpy">
-<code class="sig-name descname">get_enthalpy</code><span class="sig-paren">(</span><em class="sig-param">calc</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.wrappers.G09.G09.get_enthalpy" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the enthalpy (H) from an g09 calculation output</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="autode.wrappers.G09.G09.get_final_atoms">
-<code class="sig-name descname">get_final_atoms</code><span class="sig-paren">(</span><em class="sig-param">calc</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.wrappers.G09.G09.get_final_atoms" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function implemented in individual child classes</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>calc</strong> (<a class="reference internal" href="../calculation.html#autode.calculation.Calculation" title="autode.calculation.Calculation"><em>autode.calculation.Calculation</em></a>) – </p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p></p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>(list(<a class="reference internal" href="../atoms.html#autode.atoms.Atom" title="autode.atoms.Atom">autode.atoms.Atom</a>))</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>(</strong><a class="reference internal" href="../exceptions.html#autode.exceptions.AtomsNotFound" title="autode.exceptions.AtomsNotFound"><strong>autode.exceptions.AtomsNotFound</strong></a><strong>)</strong> – </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="autode.wrappers.G09.G09.get_free_energy">
-<code class="sig-name descname">get_free_energy</code><span class="sig-paren">(</span><em class="sig-param">calc</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.wrappers.G09.G09.get_free_energy" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the Gibbs free energy (G) from an g09 calculation output</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="autode.wrappers.G09.G09.get_gradients">
-<code class="sig-name descname">get_gradients</code><span class="sig-paren">(</span><em class="sig-param">calc</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.wrappers.G09.G09.get_gradients" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.wrappers.G09.G09.gradient_from">
+<span class="sig-name descname"><span class="pre">gradient_from</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">calc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">CalculationExecutor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../values.html#autode.values.Gradient" title="autode.values.Gradient"><span class="pre">Gradient</span></a></span></span><a class="headerlink" href="#autode.wrappers.G09.G09.gradient_from" title="Link to this definition">#</a></dt>
 <dd><p>Get gradients from a Gaussian output file in the format</p>
 <blockquote>
-<div><p>Center     Atomic                   Forces (Hartrees/Bohr)
-Number     Number              X              Y              Z
-——————————————————————-</p>
-<blockquote>
+<div><blockquote>
 <div><p>1        6          -0.000205102    0.000074692    0.000073625
 .        .                .              .               .</p>
 </div></blockquote>
 </div></blockquote>
 </dd></dl>
 
-<dl class="method">
-<dt id="autode.wrappers.G09.G09.get_imaginary_freqs">
-<code class="sig-name descname">get_imaginary_freqs</code><span class="sig-paren">(</span><em class="sig-param">calc</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.wrappers.G09.G09.get_imaginary_freqs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function implemented in individual child classes</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.wrappers.G09.G09.hessian_from">
+<span class="sig-name descname"><span class="pre">hessian_from</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">calc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">CalculationExecutor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../hessians.html#autode.hessians.Hessian" title="autode.hessians.Hessian"><span class="pre">Hessian</span></a></span></span><a class="headerlink" href="#autode.wrappers.G09.G09.hessian_from" title="Link to this definition">#</a></dt>
+<dd><p>Extract the Hessian from a Gaussian09 calculation, which is printed as
+just the lower triangular portion but is symmetric so the full 3Nx3N
+matrix can be re-constructed. Read it from the final output block
+sandwiched between 11….. \&#64;</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>calc</strong> (<a class="reference internal" href="../calculation.html#autode.calculation.Calculation" title="autode.calculation.Calculation"><em>autode.calculation.Calculation</em></a>) – </p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>calc</strong> (<em>autode.calculation.Calculation</em>)</p>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p></p>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>(<a class="reference internal" href="../hessians.html#autode.hessians.Hessian" title="autode.hessians.Hessian">autode.hessians.Hessian</a>)</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>(list(float))</p>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>(</strong><strong>IndexError</strong><strong> | </strong><strong>ValueError</strong><strong>)</strong> – </p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="autode.wrappers.G09.G09.get_input_filename">
-<code class="sig-name descname">get_input_filename</code><span class="sig-paren">(</span><em class="sig-param">calc</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.wrappers.G09.G09.get_input_filename" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the input filename from the calculation name e.g. filename.inp</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>calc</strong> (<a class="reference internal" href="../calculation.html#autode.calculation.Calculation" title="autode.calculation.Calculation"><em>autode.calculation.Calculation</em></a>) – </p>
-</dd>
-</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.wrappers.G09.G09.input_filename_for">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">input_filename_for</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">calc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">CalculationExecutor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#autode.wrappers.G09.G09.input_filename_for" title="Link to this definition">#</a></dt>
+<dd><p>Determine the input filename for a calculation</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="autode.wrappers.G09.G09.get_normal_mode_displacements">
-<code class="sig-name descname">get_normal_mode_displacements</code><span class="sig-paren">(</span><em class="sig-param">calc</em>, <em class="sig-param">mode_number</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.wrappers.G09.G09.get_normal_mode_displacements" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function implemented in individual child classes</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>calc</strong> (<a class="reference internal" href="../calculation.html#autode.calculation.Calculation" title="autode.calculation.Calculation"><em>autode.calculation.Calculation</em></a>) – </p></li>
-<li><p><strong>mode_number</strong> (<em>int</em>) – Number of the normal mode to get the</p></li>
-<li><p><strong>along 6 == first imaginary mode</strong> (<em>displacements</em>) – </p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p></p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>(np.ndarray)</p>
-</dd>
-</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.wrappers.G09.G09.optimiser_from">
+<span class="sig-name descname"><span class="pre">optimiser_from</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">calc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">CalculationExecutor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../opt/optimisers.html#autode.opt.optimisers.base.BaseOptimiser" title="autode.opt.optimisers.base.BaseOptimiser"><span class="pre">BaseOptimiser</span></a></span></span><a class="headerlink" href="#autode.wrappers.G09.G09.optimiser_from" title="Link to this definition">#</a></dt>
+<dd><p>Optimiser that this method used. Set from the calculation output</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="autode.wrappers.G09.G09.get_output_filename">
-<code class="sig-name descname">get_output_filename</code><span class="sig-paren">(</span><em class="sig-param">calc</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.wrappers.G09.G09.get_output_filename" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the output filename from the calculation name e.g. filename.out</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>calc</strong> (<a class="reference internal" href="../calculation.html#autode.calculation.Calculation" title="autode.calculation.Calculation"><em>autode.calculation.Calculation</em></a>) – </p>
-</dd>
-</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.wrappers.G09.G09.output_filename_for">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">output_filename_for</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">calc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">CalculationExecutor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#autode.wrappers.G09.G09.output_filename_for" title="Link to this definition">#</a></dt>
+<dd><p>Determine the output filename for a calculation</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="autode.wrappers.G09.G09.get_version">
-<code class="sig-name descname">get_version</code><span class="sig-paren">(</span><em class="sig-param">calc</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.wrappers.G09.G09.get_version" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.wrappers.G09.G09.partial_charges_from">
+<span class="sig-name descname"><span class="pre">partial_charges_from</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">calc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">CalculationExecutor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#autode.wrappers.G09.G09.partial_charges_from" title="Link to this definition">#</a></dt>
+<dd><p>Extract the partial atomic charges corresponding to the final geometry
+present in the output file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.wrappers.G09.G09.terminated_normally_in">
+<span class="sig-name descname"><span class="pre">terminated_normally_in</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">calc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rerun_if_failed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#autode.wrappers.G09.G09.terminated_normally_in" title="Link to this definition">#</a></dt>
+<dd><p>Did the calculation terminate normally?</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.wrappers.G09.G09.version_in">
+<span class="sig-name descname"><span class="pre">version_in</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">calc</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#autode.wrappers.G09.G09.version_in" title="Link to this definition">#</a></dt>
 <dd><p>Get the version of Gaussian used in this calculation</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="autode.wrappers.G09.G09.optimisation_converged">
-<code class="sig-name descname">optimisation_converged</code><span class="sig-paren">(</span><em class="sig-param">calc</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.wrappers.G09.G09.optimisation_converged" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function implemented in individual child classes</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>calc</strong> (<a class="reference internal" href="../calculation.html#autode.calculation.Calculation" title="autode.calculation.Calculation"><em>autode.calculation.Calculation</em></a>) – </p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p></p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>(bool)</p>
-</dd>
-</dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="autode.wrappers.G09.G09.optimisation_nearly_converged">
-<code class="sig-name descname">optimisation_nearly_converged</code><span class="sig-paren">(</span><em class="sig-param">calc</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.wrappers.G09.G09.optimisation_nearly_converged" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function implemented in individual child classes</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>calc</strong> (<a class="reference internal" href="../calculation.html#autode.calculation.Calculation" title="autode.calculation.Calculation"><em>autode.calculation.Calculation</em></a>) – </p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p></p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>(bool)</p>
-</dd>
-</dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="autode.wrappers.G09.G09Optimiser">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">autode.wrappers.G09.</span></span><span class="sig-name descname"><span class="pre">G09Optimiser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_lines</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#autode.wrappers.G09.G09Optimiser" title="Link to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="autode.wrappers.G09.G09Optimiser.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_lines</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#autode.wrappers.G09.G09Optimiser.__init__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.wrappers.G09.G09Optimiser.converged">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">converged</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#autode.wrappers.G09.G09Optimiser.converged" title="Link to this definition">#</a></dt>
+<dd><p>Has the optimisation converged?</p>
 </dd></dl>
 
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.wrappers.G09.G09Optimiser.last_energy_change">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">last_energy_change</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../values.html#autode.values.PotentialEnergy" title="autode.values.PotentialEnergy"><span class="pre">PotentialEnergy</span></a></em><a class="headerlink" href="#autode.wrappers.G09.G09Optimiser.last_energy_change" title="Link to this definition">#</a></dt>
+<dd><p>Find the last energy change in the file</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="autode.wrappers.G09.get_keywords">
-<code class="sig-prename descclassname">autode.wrappers.G09.</code><code class="sig-name descname">get_keywords</code><span class="sig-paren">(</span><em class="sig-param">calc_input</em>, <em class="sig-param">molecule</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.wrappers.G09.get_keywords" title="Permalink to this definition">¶</a></dt>
-<dd><p>Modify the input keywords to try and fix some Gaussian’s quirks</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="autode.wrappers.G09.modify_keywords_for_point_charges">
-<code class="sig-prename descclassname">autode.wrappers.G09.</code><code class="sig-name descname">modify_keywords_for_point_charges</code><span class="sig-paren">(</span><em class="sig-param">keywords</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.wrappers.G09.modify_keywords_for_point_charges" title="Permalink to this definition">¶</a></dt>
-<dd><p>For a list of Gaussian keywords modify to include z-matrix if not
-already included. Required if point charges are included in the calc</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="autode.wrappers.G09.n_ecp_elements">
-<code class="sig-prename descclassname">autode.wrappers.G09.</code><code class="sig-name descname">n_ecp_elements</code><span class="sig-paren">(</span><em class="sig-param">keywords</em>, <em class="sig-param">molecule</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.wrappers.G09.n_ecp_elements" title="Permalink to this definition">¶</a></dt>
-<dd><p>Number of elements that require an ECP</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="autode.wrappers.G09.print_added_internals">
-<code class="sig-prename descclassname">autode.wrappers.G09.</code><code class="sig-name descname">print_added_internals</code><span class="sig-paren">(</span><em class="sig-param">inp_file</em>, <em class="sig-param">calc_input</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.wrappers.G09.print_added_internals" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add any internal coordinates to the input file</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="autode.wrappers.G09.print_constraints">
-<code class="sig-prename descclassname">autode.wrappers.G09.</code><code class="sig-name descname">print_constraints</code><span class="sig-paren">(</span><em class="sig-param">inp_file</em>, <em class="sig-param">molecule</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.wrappers.G09.print_constraints" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add any distance or cartesian constraints to the input file</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="autode.wrappers.G09.print_custom_basis">
-<code class="sig-prename descclassname">autode.wrappers.G09.</code><code class="sig-name descname">print_custom_basis</code><span class="sig-paren">(</span><em class="sig-param">inp_file</em>, <em class="sig-param">calc_input</em>, <em class="sig-param">molecule</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.wrappers.G09.print_custom_basis" title="Permalink to this definition">¶</a></dt>
-<dd><p>Print the definition of the custom basis set file</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="autode.wrappers.G09.print_point_charges">
-<code class="sig-prename descclassname">autode.wrappers.G09.</code><code class="sig-name descname">print_point_charges</code><span class="sig-paren">(</span><em class="sig-param">inp_file</em>, <em class="sig-param">calc_input</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.wrappers.G09.print_point_charges" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add point charges to the input file</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="autode.wrappers.G09.rerun_angle_failure">
-<code class="sig-prename descclassname">autode.wrappers.G09.</code><code class="sig-name descname">rerun_angle_failure</code><span class="sig-paren">(</span><em class="sig-param">calc</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.wrappers.G09.rerun_angle_failure" title="Permalink to this definition">¶</a></dt>
-<dd><p>Gaussian will sometimes encounter a 180 degree angle and crash. This
-function performs a few geometry optimisation cycles in cartesian
-coordinates then switches back to internals</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>calc</strong> (<a class="reference internal" href="../calculation.html#autode.calculation.Calculation" title="autode.calculation.Calculation"><em>autode.calculation.Calculation</em></a>) – </p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p></p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>(<a class="reference internal" href="../calculation.html#autode.calculation.Calculation" title="autode.calculation.Calculation">autode.calculation.Calculation</a>)</p>
-</dd>
-</dl>
 </dd></dl>
 
 </section>
 
 
-           </div>
-           
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="keywords.html" class="btn btn-neutral float-right" title="Keywords" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="base.html" class="btn btn-neutral float-left" title="Base" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
-  
+                </article>
+              
 
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-        &copy; Copyright 2020, Tom Young, Joseph Silcock
-
-    </p>
-  </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
-
-</footer>
-
-        </div>
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="base.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Base</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="keywords.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Keywords</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-    </section>
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.wrappers.G09.G09"><code class="docutils literal notranslate"><span class="pre">G09</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.wrappers.G09.G09.__init__"><code class="docutils literal notranslate"><span class="pre">G09.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.wrappers.G09.G09.coordinates_from"><code class="docutils literal notranslate"><span class="pre">G09.coordinates_from()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.wrappers.G09.G09.execute"><code class="docutils literal notranslate"><span class="pre">G09.execute()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.wrappers.G09.G09.generate_input_for"><code class="docutils literal notranslate"><span class="pre">G09.generate_input_for()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.wrappers.G09.G09.gradient_from"><code class="docutils literal notranslate"><span class="pre">G09.gradient_from()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.wrappers.G09.G09.hessian_from"><code class="docutils literal notranslate"><span class="pre">G09.hessian_from()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.wrappers.G09.G09.input_filename_for"><code class="docutils literal notranslate"><span class="pre">G09.input_filename_for()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.wrappers.G09.G09.optimiser_from"><code class="docutils literal notranslate"><span class="pre">G09.optimiser_from()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.wrappers.G09.G09.output_filename_for"><code class="docutils literal notranslate"><span class="pre">G09.output_filename_for()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.wrappers.G09.G09.partial_charges_from"><code class="docutils literal notranslate"><span class="pre">G09.partial_charges_from()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.wrappers.G09.G09.terminated_normally_in"><code class="docutils literal notranslate"><span class="pre">G09.terminated_normally_in()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.wrappers.G09.G09.version_in"><code class="docutils literal notranslate"><span class="pre">G09.version_in()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.wrappers.G09.G09Optimiser"><code class="docutils literal notranslate"><span class="pre">G09Optimiser</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.wrappers.G09.G09Optimiser.__init__"><code class="docutils literal notranslate"><span class="pre">G09Optimiser.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.wrappers.G09.G09Optimiser.converged"><code class="docutils literal notranslate"><span class="pre">G09Optimiser.converged</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.wrappers.G09.G09Optimiser.last_energy_change"><code class="docutils literal notranslate"><span class="pre">G09Optimiser.last_energy_change</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Tom Young, Joseph Silcock
+</p>
 
   </div>
   
-
-
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script>
-
-  
-  
+  <div class="footer-item">
     
-   
 
-</body>
+  <p class="copyright">
+    
+      © Copyright 2020-2021, Tom Young, Joseph Silcock.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
 </html>

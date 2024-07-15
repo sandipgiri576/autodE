@@ -1,112 +1,235 @@
 
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Reaction &mdash; autodE  documentation</title>
-  
 
-  
-  
-  
-  
+<html lang="en" data-content_root="../../" >
 
-  
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    
+    <title>Reaction &#8212; autodE  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/reactions/reaction';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Reaction Types" href="reaction_types.html" />
-    <link rel="prev" title="Multistep Reaction" href="multistep.html" /> 
-</head>
+    <link rel="prev" title="Multistep Reaction" href="multistep.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-<body class="wy-body-for-nav">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-   
-  <div class="wy-grid-for-nav">
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-          
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
 
-          
-            <a href="../../index.html" class="icon icon-home"> autodE
-          
-
-          
-          </a>
-
-          
-            
-            
-              <div class="version">
-                1.0.4
-              </div>
-            
-          
-
-          
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
 
-          
-        </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
 
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <ul class="current">
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">autodE  documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../install.html">Install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../quickstart.html">Quick Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../config.html">Configuration</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Reference</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../conformers/index.html">Conformers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../pes/index.html">PES</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">Reactions</a><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Reference</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../atoms.html">Atoms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bonds.html">Bonds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculation.html">Calculation</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../conformers/index.html">Conformers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../conformers/conf_gen.html">Conf Gen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../conformers/conformer.html">Conformer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../conformers/conformers.html">Conformers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../pes/index.html">PES</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../pes/pes.html">Potential Energy Surfaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pes/mep.html">Min Energy Pathway</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">Reactions</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="multistep.html">Multistep Reaction</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Reaction</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Reaction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="reaction_types.html">Reaction Types</a></li>
 </ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../smiles/index.html">SMILES</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../solvent/index.html">Solvent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../species/index.html">Species</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../transition_states/index.html">Transition States</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../wrappers/index.html">Wrappers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../atoms.html">Atoms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../bond_lengths.html">Bonds</a></li>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../smiles/index.html">SMILES</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../smiles/smiles.html">Molecules from SMILES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smiles/parser.html">SMILES Parser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smiles/builder.html">3D Geometry Builder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smiles/atom_types.html">SMILES Atom Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smiles/angles.html">SMILES Angles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smiles/base.html">SMILES Base</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../solvent/index.html">Solvent</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solvent/solvents.html">Solvents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solvent/explicit_solvent.html">Explicit Solvent</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../species/index.html">Species</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../species/complex.html">Complex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../species/molecule.html">Molecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../species/species.html">Species</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../neb/index.html">Nudged elastic band</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../neb/neb.html">NEB Transition states</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../neb/original.html">Original NEB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../neb/ci.html">Climbing image NEB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../neb/idpp.html">Image dependent pair potential</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../transition_states/index.html">Transition States</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../transition_states/base.html">Base</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../transition_states/locate_tss.html">Locate TSs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../transition_states/templates.html">Templates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../transition_states/transition_state.html">Transition State</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../transition_states/truncation.html">Truncation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../transition_states/ts_guess.html">TS Guess</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../thermochemistry/index.html">Thermochemistry</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../thermochemistry/igm.html">Ideal gas model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../thermochemistry/symmetry.html">Symmetry</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../wrappers/index.html">Wrappers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../wrappers/base.html">Base</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wrappers/g09.html">Gaussian09</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wrappers/keywords.html">Keywords</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wrappers/mopac.html">MOPAC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wrappers/nwchem.html">NWChem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wrappers/orca.html">ORCA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wrappers/xtb.html">XTB</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../opt/index.html">Optimisation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../opt/coordinates.html">Coordinates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../opt/optimisers.html">Optimisers</a></li>
+</ul>
+</details></li>
 <li class="toctree-l2"><a class="reference internal" href="../bond_rearrangement.html">Bond Rearrangement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../calculation.html">Calculation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../config.html">Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../constants.html">Constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../exceptions.html">Exceptions</a></li>
@@ -120,186 +243,273 @@
 <li class="toctree-l2"><a class="reference internal" href="../substitution.html">Substitution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../units.html">Units</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../utils.html">Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../values.html">Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hessians.html">Hessians</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../examples/index.html">Examples</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/species.html">Species</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/molecules.html">Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/reactions.html">Reactions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/nci.html">Non-covalent Interaction Complexes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/manipulation.html">Molecular Manipulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/pes1d.html">1D PES Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/pes2d.html">2D PES Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/conformers.html">Conformer Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/rmsd.html">RMSD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/tss.html">Transition States</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/thermochem.html">Thermochemistry</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../dev/index.html">Development</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../dev/overview.html">Code Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../dev/contributing.html">Contributing to autodE</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../citation.html">Citation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1002/anie.202011941">Paper</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/reference/reactions/reaction.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Reaction</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction"><code class="docutils literal notranslate"><span class="pre">Reaction</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.__init__"><code class="docutils literal notranslate"><span class="pre">Reaction.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.atomic_symbols"><code class="docutils literal notranslate"><span class="pre">Reaction.atomic_symbols</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.calculate_complexes"><code class="docutils literal notranslate"><span class="pre">Reaction.calculate_complexes()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.calculate_reaction_profile"><code class="docutils literal notranslate"><span class="pre">Reaction.calculate_reaction_profile()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.calculate_single_points"><code class="docutils literal notranslate"><span class="pre">Reaction.calculate_single_points()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.calculate_thermochemical_cont"><code class="docutils literal notranslate"><span class="pre">Reaction.calculate_thermochemical_cont()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.delta"><code class="docutils literal notranslate"><span class="pre">Reaction.delta()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.find_lowest_energy_conformers"><code class="docutils literal notranslate"><span class="pre">Reaction.find_lowest_energy_conformers()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.find_lowest_energy_ts_conformer"><code class="docutils literal notranslate"><span class="pre">Reaction.find_lowest_energy_ts_conformer()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.from_checkpoint"><code class="docutils literal notranslate"><span class="pre">Reaction.from_checkpoint()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.has_identical_composition_as"><code class="docutils literal notranslate"><span class="pre">Reaction.has_identical_composition_as()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.is_barrierless"><code class="docutils literal notranslate"><span class="pre">Reaction.is_barrierless</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.load"><code class="docutils literal notranslate"><span class="pre">Reaction.load()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.locate_transition_state"><code class="docutils literal notranslate"><span class="pre">Reaction.locate_transition_state()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.optimise_reacs_prods"><code class="docutils literal notranslate"><span class="pre">Reaction.optimise_reacs_prods()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.print_output"><code class="docutils literal notranslate"><span class="pre">Reaction.print_output()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.product"><code class="docutils literal notranslate"><span class="pre">Reaction.product</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.reactant"><code class="docutils literal notranslate"><span class="pre">Reaction.reactant</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.save"><code class="docutils literal notranslate"><span class="pre">Reaction.save()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.switch_reactants_products"><code class="docutils literal notranslate"><span class="pre">Reaction.switch_reactants_products()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.ts"><code class="docutils literal notranslate"><span class="pre">Reaction.ts</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting.html">Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../examples/index.html">Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../citation.html">Citation</a></li>
 </ul>
-
-            
-          
+            </nav>
         </div>
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">autodE</a>
-        
-      </nav>
-
-
-      <div class="wy-nav-content">
-        
-        <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
-  <ul class="wy-breadcrumbs">
-    
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
-        
-          <li><a href="../index.html">Reference</a> &raquo;</li>
-        
-          <li><a href="index.html">Reactions</a> &raquo;</li>
-        
-      <li>Reaction</li>
-    
-    
-      <li class="wy-breadcrumbs-aside">
-        
-            
-            <a href="../../_sources/reference/reactions/reaction.rst.txt" rel="nofollow"> View page source</a>
-          
-        
-      </li>
-    
-  </ul>
-
-  
-  <hr/>
+    </div>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-            
-  <section id="module-autode.reactions.reaction">
-<span id="reaction"></span><h1>Reaction<a class="headerlink" href="#module-autode.reactions.reaction" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
-<dt id="autode.reactions.reaction.Reaction">
-<em class="property">class </em><code class="sig-prename descclassname">autode.reactions.reaction.</code><code class="sig-name descname">Reaction</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">name='reaction'</em>, <em class="sig-param">solvent_name=None</em>, <em class="sig-param">smiles=None</em>, <em class="sig-param">temp=298.15</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.reactions.reaction.Reaction" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
-<dt id="autode.reactions.reaction.Reaction.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">name='reaction'</em>, <em class="sig-param">solvent_name=None</em>, <em class="sig-param">smiles=None</em>, <em class="sig-param">temp=298.15</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.reactions.reaction.Reaction.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Reaction containing reactants and products. reaction.reactant is the
-reactant complex which is the same as reacs[0] if there is only
-reactant</p>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="reaction">
+<span id="id1"></span><h1>Reaction<a class="headerlink" href="#reaction" title="Link to this heading">#</a></h1>
+<dl class="py class" id="module-autode.reactions.reaction">
+<dt class="sig sig-object py" id="autode.reactions.reaction.Reaction">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">autode.reactions.reaction.</span></span><span class="sig-name descname"><span class="pre">Reaction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*args:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">Species</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'reaction'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solvent_name:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smiles:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temp:</span> <span class="pre">~autode.values.Temperature</span> <span class="pre">=</span> <span class="pre">Temperature(298.15</span> <span class="pre">kelvin)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#autode.reactions.reaction.Reaction" title="Link to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="autode.reactions.reaction.Reaction.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*args:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">Species</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'reaction'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solvent_name:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smiles:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temp:</span> <span class="pre">~autode.values.Temperature</span> <span class="pre">=</span> <span class="pre">Temperature(298.15</span> <span class="pre">kelvin)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#autode.reactions.reaction.Reaction.__init__" title="Link to this definition">#</a></dt>
+<dd><p>Elementary chemical reaction formed from reactants and products.
+Number of atoms, charge and solvent must match on either side of
+the reaction. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>                <span class="n">H</span>                             <span class="n">H</span>    <span class="n">H</span>
+               <span class="o">/</span>                               \  <span class="o">/</span>
+<span class="n">H</span>   <span class="o">+</span>    <span class="n">H</span> <span class="o">--</span> <span class="n">C</span> <span class="o">--</span> <span class="n">H</span>     <span class="o">---&gt;</span>     <span class="n">H</span><span class="o">--</span><span class="n">H</span>   <span class="o">+</span>      <span class="n">C</span>
+              \                                 <span class="o">|</span>
+               <span class="n">H</span>                                <span class="n">H</span>
+</pre></div>
+</div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>args</strong> – Reactant and Product
-objects or a SMILES string of the whole reaction</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>args</strong> – Reactant and Product objects
+or a SMILES string of the whole reaction.</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="autode.reactions.reaction.Reaction.calc_delta_e">
-<code class="sig-name descname">calc_delta_e</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#autode.reactions.reaction.Reaction.calc_delta_e" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate the ∆Er of a reaction defined as
-∆E = E(products) - E(reactants)</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Energy difference in Hartrees</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>(float)</p>
-</dd>
-</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.reactions.reaction.Reaction.atomic_symbols">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">atomic_symbols</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#autode.reactions.reaction.Reaction.atomic_symbols" title="Link to this definition">#</a></dt>
+<dd><p>Atomic symbols of all atoms in this reaction sorted alphabetically.
+For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">autode</span> <span class="kn">import</span> <span class="n">Atom</span><span class="p">,</span> <span class="n">Reactant</span><span class="p">,</span> <span class="n">Product</span><span class="p">,</span> <span class="n">Reaction</span>
+<span class="go">&gt;&gt;&gt;rxn = Reaction(Reactant(smiles=&#39;O&#39;),</span>
+<span class="go">                  Product(atoms=[Atom(&#39;O&#39;), Atom(&#39;H&#39;, x=0.9)]),</span>
+<span class="go">                  Product(atoms=[Atom(&#39;H&#39;)]))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rxn</span><span class="o">.</span><span class="n">atomic_symbols</span>
+<span class="go">[&#39;H&#39;, &#39;H&#39;, &#39;O&#39;]</span>
+</pre></div>
+</div>
 </dd></dl>
 
-<dl class="method">
-<dt id="autode.reactions.reaction.Reaction.calc_delta_e_ddagger">
-<code class="sig-name descname">calc_delta_e_ddagger</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#autode.reactions.reaction.Reaction.calc_delta_e_ddagger" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="simple">
-<dt>Calculate the ∆E‡ of a reaction defined as</dt><dd><p>∆E = E(ts) - E(reactants)</p>
-</dd>
-</dl>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>energy difference in Hartrees</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="autode.reactions.reaction.Reaction.calc_delta_g">
-<code class="sig-name descname">calc_delta_g</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#autode.reactions.reaction.Reaction.calc_delta_g" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate ∆G_r = G(products) - G(reactants)</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Energy difference in Hartrees</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>(float)</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="autode.reactions.reaction.Reaction.calc_delta_g_ddagger">
-<code class="sig-name descname">calc_delta_g_ddagger</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#autode.reactions.reaction.Reaction.calc_delta_g_ddagger" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate ∆G‡ in Hartrees</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="autode.reactions.reaction.Reaction.calc_delta_h">
-<code class="sig-name descname">calc_delta_h</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#autode.reactions.reaction.Reaction.calc_delta_h" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate ∆H_r = H(products) - H(reactants)</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Energy difference in Hartrees</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>(float)</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="autode.reactions.reaction.Reaction.calc_delta_h_ddagger">
-<code class="sig-name descname">calc_delta_h_ddagger</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#autode.reactions.reaction.Reaction.calc_delta_h_ddagger" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate ∆H‡ in Hartrees</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="autode.reactions.reaction.Reaction.calculate_complexes">
-<code class="sig-name descname">calculate_complexes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#autode.reactions.reaction.Reaction.calculate_complexes" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.reactions.reaction.Reaction.calculate_complexes">
+<span class="sig-name descname"><span class="pre">calculate_complexes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#autode.reactions.reaction.Reaction.calculate_complexes" title="Link to this definition">#</a></dt>
 <dd><p>Find the lowest energy conformers of reactant and product complexes
 using optimisation and single points</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="autode.reactions.reaction.Reaction.calculate_reaction_profile">
-<code class="sig-name descname">calculate_reaction_profile</code><span class="sig-paren">(</span><em class="sig-param">units=&lt;class 'autode.units.KcalMol'&gt;</em>, <em class="sig-param">with_complexes=False</em>, <em class="sig-param">free_energy=False</em>, <em class="sig-param">enthalpy=False</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.reactions.reaction.Reaction.calculate_reaction_profile" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate and plot a reaction profile for this reaction in some units</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.reactions.reaction.Reaction.calculate_reaction_profile">
+<span class="sig-name descname"><span class="pre">calculate_reaction_profile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">units</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../units.html#autode.units.Unit" title="autode.units.Unit"><span class="pre">Unit</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'kcal</span> <span class="pre">mol-1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_complexes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">free_energy</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enthalpy</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#autode.reactions.reaction.Reaction.calculate_reaction_profile" title="Link to this definition">#</a></dt>
+<dd><p>Calculate and plot a reaction profile for this elemtary reaction. Will
+search conformers, find the lowest energy TS and plot a profile.
+Calculations are performed in a new directory (self.name/)</p>
 <dl class="field-list simple">
-<dt class="field-odd">Keyword Arguments</dt>
+<dt class="field-odd">Keyword Arguments<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>units</strong> (<a class="reference internal" href="../units.html#autode.units.Unit" title="autode.units.Unit"><em>autode.units.Unit</em></a>) – </p></li>
 <li><p><strong>with_complexes</strong> (<em>bool</em>) – Calculate the lowest energy conformers
 of the reactant and product complexes</p></li>
 <li><p><strong>free_energy</strong> (<em>bool</em>) – Calculate the free energy profile (G)</p></li>
@@ -309,141 +519,283 @@ of the reactant and product complexes</p></li>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="autode.reactions.reaction.Reaction.calculate_single_points">
-<code class="sig-name descname">calculate_single_points</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#autode.reactions.reaction.Reaction.calculate_single_points" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.reactions.reaction.Reaction.calculate_single_points">
+<span class="sig-name descname"><span class="pre">calculate_single_points</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#autode.reactions.reaction.Reaction.calculate_single_points" title="Link to this definition">#</a></dt>
 <dd><p>Perform a single point energy evaluations on all the reactants and
 products using the hmethod</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="autode.reactions.reaction.Reaction.calculate_thermochemical_cont">
-<code class="sig-name descname">calculate_thermochemical_cont</code><span class="sig-paren">(</span><em class="sig-param">free_energy=True</em>, <em class="sig-param">enthalpy=True</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.reactions.reaction.Reaction.calculate_thermochemical_cont" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.reactions.reaction.Reaction.calculate_thermochemical_cont">
+<span class="sig-name descname"><span class="pre">calculate_thermochemical_cont</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">free_energy</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enthalpy</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#autode.reactions.reaction.Reaction.calculate_thermochemical_cont" title="Link to this definition">#</a></dt>
 <dd><p>Calculate thermochemical contributions to the energies</p>
-<dl class="simple">
-<dt>Keyword Arguments</dt><dd><p>free_energy (bool):
-enthalpy (bool):</p>
+<blockquote>
+<div><p>enthalpy (bool):</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.reactions.reaction.Reaction.delta">
+<span class="sig-name descname"><span class="pre">delta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delta_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../values.html#autode.values.Energy" title="autode.values.Energy"><span class="pre">Energy</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#autode.reactions.reaction.Reaction.delta" title="Link to this definition">#</a></dt>
+<dd><p>Energy difference for either reactants-&gt;TS or reactants -&gt; products.
+Allows for equivelances “E‡” == “E ddagger” == “E double dagger” all
+return the potential energy barrier ∆E^‡. Can return None if energies
+of the reactants/products are None but will estimate for a TS (provided
+reactants and product energies are present). Example:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">autode</span> <span class="k">as</span> <span class="nn">ade</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">rxn</span> <span class="o">=</span> <span class="n">ade</span><span class="o">.</span><span class="n">Reaction</span><span class="p">(</span><span class="n">ade</span><span class="o">.</span><span class="n">Reactant</span><span class="p">(),</span> <span class="n">ade</span><span class="o">.</span><span class="n">Product</span><span class="p">())</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">rxn</span><span class="o">.</span><span class="n">delta</span><span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span>
+<span class="kc">True</span>
+</pre></div>
+</div>
+<p>For reactants and products with energies:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">A</span> <span class="o">=</span> <span class="n">ade</span><span class="o">.</span><span class="n">Reactant</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">A</span><span class="o">.</span><span class="n">energy</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">B</span> <span class="o">=</span> <span class="n">ade</span><span class="o">.</span><span class="n">Product</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">B</span><span class="o">.</span><span class="n">energy</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="o">&gt;&gt;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">rxn</span> <span class="o">=</span> <span class="n">ade</span><span class="o">.</span><span class="n">Reaction</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">rxn</span><span class="o">.</span><span class="n">delta</span><span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">)</span>
+<span class="n">Energy</span><span class="p">(</span><span class="mf">1.0</span> <span class="n">Ha</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>delta_type</strong> (<em>str</em>) – Type of difference to calculate. Possibles:
+{E, H, G, E‡, H‡, G‡}</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>Difference if all energies are</dt><dd><p>defined or None otherwise</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(<a class="reference internal" href="../values.html#autode.values.Energy" title="autode.values.Energy">autode.values.Energy</a> | None)</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="autode.reactions.reaction.Reaction.find_complexes">
-<code class="sig-name descname">find_complexes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#autode.reactions.reaction.Reaction.find_complexes" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="autode.reactions.reaction.Reaction.find_lowest_energy_conformers">
-<code class="sig-name descname">find_lowest_energy_conformers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#autode.reactions.reaction.Reaction.find_lowest_energy_conformers" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.reactions.reaction.Reaction.find_lowest_energy_conformers">
+<span class="sig-name descname"><span class="pre">find_lowest_energy_conformers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#autode.reactions.reaction.Reaction.find_lowest_energy_conformers" title="Link to this definition">#</a></dt>
 <dd><p>Try and locate the lowest energy conformation using simulated
 annealing, then optimise them with xtb, then optimise the unique
 (defined by an energy cut-off) conformers with an electronic structure
 method</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="autode.reactions.reaction.Reaction.find_lowest_energy_ts">
-<code class="sig-name descname">find_lowest_energy_ts</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#autode.reactions.reaction.Reaction.find_lowest_energy_ts" title="Permalink to this definition">¶</a></dt>
-<dd><p>From all the transition state objects in Reaction.pes1d choose the
-lowest energy if there is more than one otherwise return the single
-transtion state or None if there no TS objects.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="autode.reactions.reaction.Reaction.find_lowest_energy_ts_conformer">
-<code class="sig-name descname">find_lowest_energy_ts_conformer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#autode.reactions.reaction.Reaction.find_lowest_energy_ts_conformer" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.reactions.reaction.Reaction.find_lowest_energy_ts_conformer">
+<span class="sig-name descname"><span class="pre">find_lowest_energy_ts_conformer</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#autode.reactions.reaction.Reaction.find_lowest_energy_ts_conformer" title="Link to this definition">#</a></dt>
 <dd><p>Find the lowest energy conformer of the transition state</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="autode.reactions.reaction.Reaction.locate_transition_state">
-<code class="sig-name descname">locate_transition_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#autode.reactions.reaction.Reaction.locate_transition_state" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.reactions.reaction.Reaction.from_checkpoint">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_checkpoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#autode.reactions.reaction.Reaction" title="autode.reactions.reaction.Reaction"><span class="pre">Reaction</span></a></span></span><a class="headerlink" href="#autode.reactions.reaction.Reaction.from_checkpoint" title="Link to this definition">#</a></dt>
+<dd><p>Create a reaction from a checkpoint file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.reactions.reaction.Reaction.has_identical_composition_as">
+<span class="sig-name descname"><span class="pre">has_identical_composition_as</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reaction</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#autode.reactions.reaction.Reaction" title="autode.reactions.reaction.Reaction"><span class="pre">Reaction</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#autode.reactions.reaction.Reaction.has_identical_composition_as" title="Link to this definition">#</a></dt>
+<dd><p>Does this reaction have the same chemical identity as another?</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.reactions.reaction.Reaction.is_barrierless">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_barrierless</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#autode.reactions.reaction.Reaction.is_barrierless" title="Link to this definition">#</a></dt>
+<dd><p>Is this reaction barrierless? i.e. without a barrier either because
+there is no enthalpic barrier to the reaction, or because a TS cannot
+be located.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.reactions.reaction.Reaction.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#autode.reactions.reaction.Reaction.load" title="Link to this definition">#</a></dt>
+<dd><p>Load a reaction state from a binary file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.reactions.reaction.Reaction.locate_transition_state">
+<span class="sig-name descname"><span class="pre">locate_transition_state</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#autode.reactions.reaction.Reaction.locate_transition_state" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="autode.reactions.reaction.Reaction.optimise_reacs_prods">
-<code class="sig-name descname">optimise_reacs_prods</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#autode.reactions.reaction.Reaction.optimise_reacs_prods" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.reactions.reaction.Reaction.optimise_reacs_prods">
+<span class="sig-name descname"><span class="pre">optimise_reacs_prods</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#autode.reactions.reaction.Reaction.optimise_reacs_prods" title="Link to this definition">#</a></dt>
 <dd><p>Perform a geometry optimisation on all the reactants and products
 using the method</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="autode.reactions.reaction.Reaction.print_output">
-<code class="sig-name descname">print_output</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#autode.reactions.reaction.Reaction.print_output" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.reactions.reaction.Reaction.print_output">
+<span class="sig-name descname"><span class="pre">print_output</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#autode.reactions.reaction.Reaction.print_output" title="Link to this definition">#</a></dt>
 <dd><p>Print the final optimised structures along with the methods used</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="autode.reactions.reaction.Reaction.switch_reactants_products">
-<code class="sig-name descname">switch_reactants_products</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#autode.reactions.reaction.Reaction.switch_reactants_products" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.reactions.reaction.Reaction.product">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">product</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../species/complex.html#autode.species.complex.ProductComplex" title="autode.species.complex.ProductComplex"><span class="pre">ProductComplex</span></a></em><a class="headerlink" href="#autode.reactions.reaction.Reaction.product" title="Link to this definition">#</a></dt>
+<dd><p>Product complex comprising all the products in this reaction</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.reactions.reaction.Reaction.reactant">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">reactant</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../species/complex.html#autode.species.complex.ReactantComplex" title="autode.species.complex.ReactantComplex"><span class="pre">ReactantComplex</span></a></em><a class="headerlink" href="#autode.reactions.reaction.Reaction.reactant" title="Link to this definition">#</a></dt>
+<dd><p>Reactant complex comprising all the reactants in this reaction</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.reactions.reaction.Reaction.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#autode.reactions.reaction.Reaction.save" title="Link to this definition">#</a></dt>
+<dd><p>Save the state of this reaction to a binary file that can be reloaded</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="autode.reactions.reaction.Reaction.switch_reactants_products">
+<span class="sig-name descname"><span class="pre">switch_reactants_products</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#autode.reactions.reaction.Reaction.switch_reactants_products" title="Link to this definition">#</a></dt>
 <dd><p>Addition reactions are hard to find the TSs for, so swap reactants
 and products and classify as dissociation. Likewise for reactions wher
 the change in the number of bonds is negative</p>
 </dd></dl>
 
+<dl class="py property">
+<dt class="sig sig-object py" id="autode.reactions.reaction.Reaction.ts">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ts</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../transition_states/transition_state.html#autode.transition_states.transition_state.TransitionState" title="autode.transition_states.transition_state.TransitionState"><span class="pre">TransitionState</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#autode.reactions.reaction.Reaction.ts" title="Link to this definition">#</a></dt>
+<dd><p>_The_ transition state for this reaction. If there are multiple then
+return the lowest energy but if there are no transtion states then
+return None</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="autode.reactions.reaction.calc_delta">
-<code class="sig-prename descclassname">autode.reactions.reaction.</code><code class="sig-name descname">calc_delta</code><span class="sig-paren">(</span><em class="sig-param">attr</em>, <em class="sig-param">left</em>, <em class="sig-param">right</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.reactions.reaction.calc_delta" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate the difference (∆) for a molecular attribute for some L → R</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="autode.reactions.reaction.calc_delta_with_cont">
-<code class="sig-prename descclassname">autode.reactions.reaction.</code><code class="sig-name descname">calc_delta_with_cont</code><span class="sig-paren">(</span><em class="sig-param">left</em>, <em class="sig-param">right</em>, <em class="sig-param">cont</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.reactions.reaction.calc_delta_with_cont" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate a ∆H or ∆G by adding a contribution to ∆E</p>
 </dd></dl>
 
 </section>
 
 
-           </div>
-           
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="reaction_types.html" class="btn btn-neutral float-right" title="Reaction Types" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="multistep.html" class="btn btn-neutral float-left" title="Multistep Reaction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
-  
+                </article>
+              
 
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-        &copy; Copyright 2020, Tom Young, Joseph Silcock
-
-    </p>
-  </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
-
-</footer>
-
-        </div>
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="multistep.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Multistep Reaction</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="reaction_types.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Reaction Types</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-    </section>
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction"><code class="docutils literal notranslate"><span class="pre">Reaction</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.__init__"><code class="docutils literal notranslate"><span class="pre">Reaction.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.atomic_symbols"><code class="docutils literal notranslate"><span class="pre">Reaction.atomic_symbols</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.calculate_complexes"><code class="docutils literal notranslate"><span class="pre">Reaction.calculate_complexes()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.calculate_reaction_profile"><code class="docutils literal notranslate"><span class="pre">Reaction.calculate_reaction_profile()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.calculate_single_points"><code class="docutils literal notranslate"><span class="pre">Reaction.calculate_single_points()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.calculate_thermochemical_cont"><code class="docutils literal notranslate"><span class="pre">Reaction.calculate_thermochemical_cont()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.delta"><code class="docutils literal notranslate"><span class="pre">Reaction.delta()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.find_lowest_energy_conformers"><code class="docutils literal notranslate"><span class="pre">Reaction.find_lowest_energy_conformers()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.find_lowest_energy_ts_conformer"><code class="docutils literal notranslate"><span class="pre">Reaction.find_lowest_energy_ts_conformer()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.from_checkpoint"><code class="docutils literal notranslate"><span class="pre">Reaction.from_checkpoint()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.has_identical_composition_as"><code class="docutils literal notranslate"><span class="pre">Reaction.has_identical_composition_as()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.is_barrierless"><code class="docutils literal notranslate"><span class="pre">Reaction.is_barrierless</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.load"><code class="docutils literal notranslate"><span class="pre">Reaction.load()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.locate_transition_state"><code class="docutils literal notranslate"><span class="pre">Reaction.locate_transition_state()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.optimise_reacs_prods"><code class="docutils literal notranslate"><span class="pre">Reaction.optimise_reacs_prods()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.print_output"><code class="docutils literal notranslate"><span class="pre">Reaction.print_output()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.product"><code class="docutils literal notranslate"><span class="pre">Reaction.product</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.reactant"><code class="docutils literal notranslate"><span class="pre">Reaction.reactant</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.save"><code class="docutils literal notranslate"><span class="pre">Reaction.save()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.switch_reactants_products"><code class="docutils literal notranslate"><span class="pre">Reaction.switch_reactants_products()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.reactions.reaction.Reaction.ts"><code class="docutils literal notranslate"><span class="pre">Reaction.ts</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Tom Young, Joseph Silcock
+</p>
 
   </div>
   
-
-
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script>
-
-  
-  
+  <div class="footer-item">
     
-   
 
-</body>
+  <p class="copyright">
+    
+      © Copyright 2020-2021, Tom Young, Joseph Silcock.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
 </html>

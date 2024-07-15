@@ -1,112 +1,235 @@
 
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Conf Gen &mdash; autodE  documentation</title>
-  
 
-  
-  
-  
-  
+<html lang="en" data-content_root="../../" >
 
-  
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    
+    <title>Conf Gen &#8212; autodE  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/conformers/conf_gen';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Conformer" href="conformer.html" />
-    <link rel="prev" title="Conformers" href="index.html" /> 
-</head>
+    <link rel="prev" title="Conformers" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-<body class="wy-body-for-nav">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-   
-  <div class="wy-grid-for-nav">
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-          
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
 
-          
-            <a href="../../index.html" class="icon icon-home"> autodE
-          
-
-          
-          </a>
-
-          
-            
-            
-              <div class="version">
-                1.0.4
-              </div>
-            
-          
-
-          
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
 
-          
-        </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
 
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <ul class="current">
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">autodE  documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../install.html">Install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../quickstart.html">Quick Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../config.html">Configuration</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Reference</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">Conformers</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Conf Gen</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Reference</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../atoms.html">Atoms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bonds.html">Bonds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculation.html">Calculation</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">Conformers</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Conf Gen</a></li>
 <li class="toctree-l3"><a class="reference internal" href="conformer.html">Conformer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="conformers.html">Conformers</a></li>
 </ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../pes/index.html">PES</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../reactions/index.html">Reactions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../smiles/index.html">SMILES</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../solvent/index.html">Solvent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../species/index.html">Species</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../transition_states/index.html">Transition States</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../wrappers/index.html">Wrappers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../atoms.html">Atoms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../bond_lengths.html">Bonds</a></li>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../pes/index.html">PES</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../pes/pes.html">Potential Energy Surfaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pes/mep.html">Min Energy Pathway</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../reactions/index.html">Reactions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../reactions/multistep.html">Multistep Reaction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reactions/reaction.html">Reaction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reactions/reaction_types.html">Reaction Types</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../smiles/index.html">SMILES</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../smiles/smiles.html">Molecules from SMILES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smiles/parser.html">SMILES Parser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smiles/builder.html">3D Geometry Builder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smiles/atom_types.html">SMILES Atom Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smiles/angles.html">SMILES Angles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smiles/base.html">SMILES Base</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../solvent/index.html">Solvent</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solvent/solvents.html">Solvents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solvent/explicit_solvent.html">Explicit Solvent</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../species/index.html">Species</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../species/complex.html">Complex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../species/molecule.html">Molecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../species/species.html">Species</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../neb/index.html">Nudged elastic band</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../neb/neb.html">NEB Transition states</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../neb/original.html">Original NEB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../neb/ci.html">Climbing image NEB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../neb/idpp.html">Image dependent pair potential</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../transition_states/index.html">Transition States</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../transition_states/base.html">Base</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../transition_states/locate_tss.html">Locate TSs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../transition_states/templates.html">Templates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../transition_states/transition_state.html">Transition State</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../transition_states/truncation.html">Truncation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../transition_states/ts_guess.html">TS Guess</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../thermochemistry/index.html">Thermochemistry</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../thermochemistry/igm.html">Ideal gas model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../thermochemistry/symmetry.html">Symmetry</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../wrappers/index.html">Wrappers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../wrappers/base.html">Base</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wrappers/g09.html">Gaussian09</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wrappers/keywords.html">Keywords</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wrappers/mopac.html">MOPAC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wrappers/nwchem.html">NWChem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wrappers/orca.html">ORCA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wrappers/xtb.html">XTB</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../opt/index.html">Optimisation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../opt/coordinates.html">Coordinates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../opt/optimisers.html">Optimisers</a></li>
+</ul>
+</details></li>
 <li class="toctree-l2"><a class="reference internal" href="../bond_rearrangement.html">Bond Rearrangement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../calculation.html">Calculation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../config.html">Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../constants.html">Constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../exceptions.html">Exceptions</a></li>
@@ -120,325 +243,245 @@
 <li class="toctree-l2"><a class="reference internal" href="../substitution.html">Substitution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../units.html">Units</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../utils.html">Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../values.html">Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hessians.html">Hessians</a></li>
 </ul>
-</li>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting.html">Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../examples/index.html">Examples</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../examples/index.html">Examples</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/species.html">Species</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/molecules.html">Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/reactions.html">Reactions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/nci.html">Non-covalent Interaction Complexes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/manipulation.html">Molecular Manipulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/pes1d.html">1D PES Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/pes2d.html">2D PES Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/conformers.html">Conformer Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/rmsd.html">RMSD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/tss.html">Transition States</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/thermochem.html">Thermochemistry</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../dev/index.html">Development</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../dev/overview.html">Code Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../dev/contributing.html">Contributing to autodE</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../../citation.html">Citation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1002/anie.202011941">Paper</a></li>
 </ul>
 
-            
-          
-        </div>
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">autodE</a>
-        
-      </nav>
-
-
-      <div class="wy-nav-content">
-        
-        <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
-  <ul class="wy-breadcrumbs">
-    
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
-        
-          <li><a href="../index.html">Reference</a> &raquo;</li>
-        
-          <li><a href="index.html">Conformers</a> &raquo;</li>
-        
-      <li>Conf Gen</li>
-    
-    
-      <li class="wy-breadcrumbs-aside">
-        
-            
-            <a href="../../_sources/reference/conformers/conf_gen.rst.txt" rel="nofollow"> View page source</a>
-          
-        
-      </li>
-    
-  </ul>
-
+    </div>
+</nav></div>
+    </div>
   
-  <hr/>
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/reference/conformers/conf_gen.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Conf Gen</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.conformers.conf_gen.get_simanl_atoms"><code class="docutils literal notranslate"><span class="pre">get_simanl_atoms()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.conformers.conf_gen.get_simanl_conformer"><code class="docutils literal notranslate"><span class="pre">get_simanl_conformer()</span></code></a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section id="module-autode.conformers.conf_gen">
-<span id="conf-gen"></span><h1>Conf Gen<a class="headerlink" href="#module-autode.conformers.conf_gen" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
-<dt id="autode.conformers.conf_gen.add_dist_consts_for_stereocentres">
-<code class="sig-prename descclassname">autode.conformers.conf_gen.</code><code class="sig-name descname">add_dist_consts_for_stereocentres</code><span class="sig-paren">(</span><em class="sig-param">species</em>, <em class="sig-param">dist_consts</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.conformers.conf_gen.add_dist_consts_for_stereocentres" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add distances constraints across two bonded stereocentres, for example
-for a Z alkene, (hopefully) ensuring that in the conformer generation the
-stereochemistry is retained. Will also add distance constraints from
-one nearest neighbour to the other nearest neighbours for that chiral
-centre</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>species</strong> (<em>autode.species.Species</em>) – </p></li>
-<li><p><strong>dist_consts</strong> (<em>dict</em>) – keyed with tuple of atom indexes and valued with
-the distance (Å), or None</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Distance constraints</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>(dict)</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="function">
-<dt id="autode.conformers.conf_gen.get_atoms_from_generated_file">
-<code class="sig-prename descclassname">autode.conformers.conf_gen.</code><code class="sig-name descname">get_atoms_from_generated_file</code><span class="sig-paren">(</span><em class="sig-param">species</em>, <em class="sig-param">xyz_filename</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.conformers.conf_gen.get_atoms_from_generated_file" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get atoms from a previously generated  .xyz file, if the atoms match</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>species</strong> (<em>autode.species.Species</em>) – </p></li>
-<li><p><strong>xyz_filename</strong> (<em>str</em>) – </p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Atoms from file</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>(list(autode.atoms.Atoms)) or None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="function">
-<dt id="autode.conformers.conf_gen.get_atoms_rotated_stereocentres">
-<code class="sig-prename descclassname">autode.conformers.conf_gen.</code><code class="sig-name descname">get_atoms_rotated_stereocentres</code><span class="sig-paren">(</span><em class="sig-param">species</em>, <em class="sig-param">atoms</em>, <em class="sig-param">rand</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.conformers.conf_gen.get_atoms_rotated_stereocentres" title="Permalink to this definition">¶</a></dt>
-<dd><p>If two stereocentres are bonded, rotate them randomly with respect
-to each other</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>species</strong> (<em>autode.species.Species</em>) – </p></li>
-<li><p><strong>atoms</strong> (<em>list</em><em>(</em><a class="reference internal" href="../atoms.html#autode.atoms.Atom" title="autode.atoms.Atom"><em>autode.atoms.Atom</em></a><em>)</em>) – </p></li>
-<li><p><strong>rand</strong> (<em>np.RandomState</em>) – random state</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Atoms</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>(list(<a class="reference internal" href="../atoms.html#autode.atoms.Atom" title="autode.atoms.Atom">autode.atoms.Atom</a>))</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="function">
-<dt id="autode.conformers.conf_gen.get_bond_matrix">
-<code class="sig-prename descclassname">autode.conformers.conf_gen.</code><code class="sig-name descname">get_bond_matrix</code><span class="sig-paren">(</span><em class="sig-param">n_atoms</em>, <em class="sig-param">bonds</em>, <em class="sig-param">fixed_bonds</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.conformers.conf_gen.get_bond_matrix" title="Permalink to this definition">¶</a></dt>
-<dd><p>Populate a bond matrix with 1 if i, j are bonded, 2 if i, j are bonded and
-fixed and 0 otherwise. Can support a partial structure with bonds to atoms</p>
-<blockquote>
-<div><p>that don’t (yet) exist</p>
-</div></blockquote>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>n_atoms</strong> (<em>int</em>) – </p></li>
-<li><p><strong>bonds</strong> (<em>list</em><em>(</em><em>tuple</em><em>)</em>) – </p></li>
-<li><p><strong>fixed_bonds</strong> (<em>list</em><em>(</em><em>tuple</em><em>)</em>) – </p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Bond matrix, shape = (n_atoms, n_atoms)</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>(np.ndarray)</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="function">
-<dt id="autode.conformers.conf_gen.get_coords_energy">
-<code class="sig-prename descclassname">autode.conformers.conf_gen.</code><code class="sig-name descname">get_coords_energy</code><span class="sig-paren">(</span><em class="sig-param">coords</em>, <em class="sig-param">bonds</em>, <em class="sig-param">k</em>, <em class="sig-param">c</em>, <em class="sig-param">d0</em>, <em class="sig-param">tol</em>, <em class="sig-param">fixed_bonds</em>, <em class="sig-param">exponent=8</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.conformers.conf_gen.get_coords_energy" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the coordinates that minimise a FF with a bonds + repulsion FF
-where the repulsion is c/r^exponent</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>coords</strong> (<em>np.ndarray</em>) – Initial coordinates, shape = (n_atoms, 3)</p></li>
-<li><p><strong>bonds</strong> (<em>list</em><em>(</em><em>tuple</em><em>(</em><em>int</em><em>)</em><em>)</em>) – List of bonds</p></li>
-<li><p><strong>fixed_bonds</strong> (<em>list</em><em>(</em><em>tuple</em><em>(</em><em>int</em><em>)</em><em>)</em>) – List of constrained bonds will use 10k
-as the harmonic force constant</p></li>
-<li><p><strong>k</strong> (<em>float</em>) – </p></li>
-<li><p><strong>c</strong> (<em>float</em>) – </p></li>
-</ul>
-</dd>
-<dt class="field-even">Keyword Arguments</dt>
-<dd class="field-even"><p><strong>exponent</strong> (<em>int</em>) – Exponent in the repulsive pairwise term</p>
-</dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Optimised coordinates, shape = (n_atoms, 3)</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>(np.ndarray)</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="function">
-<dt id="autode.conformers.conf_gen.get_coords_no_init_structure">
-<code class="sig-prename descclassname">autode.conformers.conf_gen.</code><code class="sig-name descname">get_coords_no_init_structure</code><span class="sig-paren">(</span><em class="sig-param">atoms</em>, <em class="sig-param">species</em>, <em class="sig-param">d0</em>, <em class="sig-param">constrained_bonds</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.conformers.conf_gen.get_coords_no_init_structure" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="simple">
-<dt>Generate coordinates where no initial structure is present - this fixes(?)</dt><dd><p>a problem for large molecule where if all the atoms are initially bonded
-and minimised then high energy minima are often found</p>
-</dd>
-</dl>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>atoms</strong> (<em>list</em><em>(</em><a class="reference internal" href="../atoms.html#autode.atoms.Atom" title="autode.atoms.Atom"><em>autode.atoms.Atom</em></a><em>)</em>) – </p></li>
-<li><p><strong>species</strong> (<em>autode.species.Species</em>) – </p></li>
-<li><p><strong>d0</strong> (<em>np.ndarray</em>) – </p></li>
-<li><p><strong>constrained_bonds</strong> (<em>list</em>) – </p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Optimised coordinates, shape = (n_atoms, 3)</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>(np.ndarray)</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="function">
-<dt id="autode.conformers.conf_gen.get_non_random_atoms">
-<code class="sig-prename descclassname">autode.conformers.conf_gen.</code><code class="sig-name descname">get_non_random_atoms</code><span class="sig-paren">(</span><em class="sig-param">species</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.conformers.conf_gen.get_non_random_atoms" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the atoms that won’t be randomised in the conformer generation.
-Stereocentres and nearest neighbours</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>species</strong> (<em>autode.species.Species</em>) – </p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Atoms indexes to not randomise</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>(set(int))</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="function">
-<dt id="autode.conformers.conf_gen.get_simanl_atoms">
-<code class="sig-prename descclassname">autode.conformers.conf_gen.</code><code class="sig-name descname">get_simanl_atoms</code><span class="sig-paren">(</span><em class="sig-param">species</em>, <em class="sig-param">dist_consts=None</em>, <em class="sig-param">conf_n=0</em>, <em class="sig-param">save_xyz=True</em>, <em class="sig-param">also_return_energy=False</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.conformers.conf_gen.get_simanl_atoms" title="Permalink to this definition">¶</a></dt>
+<span id="conf-gen"></span><h1>Conf Gen<a class="headerlink" href="#module-autode.conformers.conf_gen" title="Link to this heading">#</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="autode.conformers.conf_gen.get_simanl_atoms">
+<span class="sig-prename descclassname"><span class="pre">autode.conformers.conf_gen.</span></span><span class="sig-name descname"><span class="pre">get_simanl_atoms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">species</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../species/species.html#autode.species.species.Species" title="autode.species.species.Species"><span class="pre">Species</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dist_consts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conf_n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_xyz</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">also_return_energy</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#autode.conformers.conf_gen.get_simanl_atoms" title="Link to this definition">#</a></dt>
 <dd><p>Use a bonded + repulsive force field to generate 3D structure for a
 species. If the initial coordinates are reasonable e.g. from a previously
 generated 3D structure then add random displacement vectors and minimise
 to generate a conformer. Otherwise add atoms to the box sequentially
 until all atoms have been added, which generates a qualitatively reasonable
-3D geometry which should be optimised using a electronic structure method</p>
-<p>V(x) = Σ_bonds k(d - d0)^2 + Σ_ij c/d^n</p>
+3D geometry which should be optimised using a electronic structure method:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">V</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="n">Σ_bonds</span> <span class="n">k</span><span class="p">(</span><span class="n">d</span> <span class="o">-</span> <span class="n">d0</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">Σ_ij</span> <span class="n">c</span><span class="o">/</span><span class="n">d</span><span class="o">^</span><span class="n">n</span>
+</pre></div>
+</div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>species</strong> (<em>autode.species.Species</em>) – </p>
-</dd>
-<dt class="field-even">Keyword Arguments</dt>
-<dd class="field-even"><ul class="simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
 <li><p><strong>dist_consts</strong> (<em>dict</em>) – Key = tuple of atom indexes, Value = distance</p></li>
 <li><p><strong>conf_n</strong> (<em>int</em>) – Number of this conformer</p></li>
 <li><p><strong>save_xyz</strong> (<em>bool</em>) – Whether or not to save a .xyz file of the structure
 for fast reloading</p></li>
-<li><p><strong>also_return_energy</strong> (<em>bool</em>) – Whether or not to return the energy in units of ?</p></li>
+<li><p><strong>also_return_energy</strong> (<em>bool</em>) – Whether or not to return the energy</p></li>
 </ul>
 </dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Atoms</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Atoms</p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>(list(<a class="reference internal" href="../atoms.html#autode.atoms.Atom" title="autode.atoms.Atom">autode.atoms.Atom</a>))</p>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(list(<a class="reference internal" href="../atoms.html#autode.atoms.Atom" title="autode.atoms.Atom">autode.atoms.Atom</a>))</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="function">
-<dt id="autode.conformers.conf_gen.get_simanl_conformer">
-<code class="sig-prename descclassname">autode.conformers.conf_gen.</code><code class="sig-name descname">get_simanl_conformer</code><span class="sig-paren">(</span><em class="sig-param">species</em>, <em class="sig-param">dist_consts=None</em>, <em class="sig-param">conf_n=0</em>, <em class="sig-param">save_xyz=True</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.conformers.conf_gen.get_simanl_conformer" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="autode.conformers.conf_gen.get_simanl_conformer">
+<span class="sig-prename descclassname"><span class="pre">autode.conformers.conf_gen.</span></span><span class="sig-name descname"><span class="pre">get_simanl_conformer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">species</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../species/species.html#autode.species.species.Species" title="autode.species.species.Species"><span class="pre">Species</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dist_consts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conf_n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_xyz</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="conformer.html#autode.conformers.conformer.Conformer" title="autode.conformers.conformer.Conformer"><span class="pre">Conformer</span></a></span></span><a class="headerlink" href="#autode.conformers.conf_gen.get_simanl_conformer" title="Link to this definition">#</a></dt>
 <dd><p>Generate a conformer of a species using randomise+relax with a simple FF
-(see get_simanl_atoms)</p>
+(see get_simanl_atoms). Example</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>species</strong> (<em>autode.species.Species</em>) – </p>
-</dd>
-<dt class="field-even">Keyword Arguments</dt>
-<dd class="field-even"><ul class="simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
 <li><p><strong>dist_consts</strong> (<em>dict</em>) – Key = tuple of atom indexes, Value = distance</p></li>
 <li><p><strong>conf_n</strong> (<em>int</em>) – Number of this conformer</p></li>
 <li><p><strong>save_xyz</strong> (<em>bool</em>) – Whether or not to save a .xyz file of the structure</p></li>
 </ul>
 </dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Conformer</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Conformer</p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>(autode.conformers.Conformer)</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="function">
-<dt id="autode.conformers.conf_gen.get_v">
-<code class="sig-prename descclassname">autode.conformers.conf_gen.</code><code class="sig-name descname">get_v</code><span class="sig-paren">(</span><em class="sig-param">coords</em>, <em class="sig-param">bonds</em>, <em class="sig-param">k</em>, <em class="sig-param">c</em>, <em class="sig-param">d0</em>, <em class="sig-param">fixed_bonds</em>, <em class="sig-param">exponent=8</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.conformers.conf_gen.get_v" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the energy using a bond + repulsion FF where</p>
-<p>V(r) = Σ_bonds k(d - d0)^2 + Σ_ij c/d^exponent</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>coords</strong> (<em>np.ndarray</em>) – shape = (n_atoms, 3)</p></li>
-<li><p><strong>bonds</strong> (<em>list</em><em>(</em><em>tuple</em><em>(</em><em>int</em><em>)</em><em>)</em>) – List of bonds</p></li>
-<li><p><strong>fixed_bonds</strong> (<em>list</em><em>(</em><em>tuple</em><em>(</em><em>int</em><em>)</em><em>)</em>) – List of constrained bonds will use 10k
-as the harmonic force constant</p></li>
-<li><p><strong>k</strong> (<em>float</em>) – </p></li>
-<li><p><strong>c</strong> (<em>float</em>) – </p></li>
-<li><p><strong>exponent</strong> (<em>int</em>) – Exponent in the repulsive pairwise term</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Energy</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>(float)</p>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(autode.conformers.Conformer)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -446,52 +489,104 @@ as the harmonic force constant</p></li>
 </section>
 
 
-           </div>
-           
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="conformer.html" class="btn btn-neutral float-right" title="Conformer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="index.html" class="btn btn-neutral float-left" title="Conformers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
-  
+                </article>
+              
 
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-        &copy; Copyright 2020, Tom Young, Joseph Silcock
-
-    </p>
-  </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
-
-</footer>
-
-        </div>
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Conformers</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="conformer.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Conformer</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-    </section>
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.conformers.conf_gen.get_simanl_atoms"><code class="docutils literal notranslate"><span class="pre">get_simanl_atoms()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autode.conformers.conf_gen.get_simanl_conformer"><code class="docutils literal notranslate"><span class="pre">get_simanl_conformer()</span></code></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Tom Young, Joseph Silcock
+</p>
 
   </div>
   
-
-
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script>
-
-  
-  
+  <div class="footer-item">
     
-   
 
-</body>
+  <p class="copyright">
+    
+      © Copyright 2020-2021, Tom Young, Joseph Silcock.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
 </html>

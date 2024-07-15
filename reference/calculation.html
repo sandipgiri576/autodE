@@ -1,107 +1,235 @@
 
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Calculation &mdash; autodE  documentation</title>
-  
 
-  
-  
-  
-  
+<html lang="en" data-content_root="../" >
 
-  
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    
+    <title>Calculation &#8212; autodE  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/calculation';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Configuration" href="config.html" />
-    <link rel="prev" title="Bond Rearrangement" href="bond_rearrangement.html" /> 
-</head>
+    <link rel="next" title="Conformers" href="conformers/index.html" />
+    <link rel="prev" title="Bonds" href="bonds.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-<body class="wy-body-for-nav">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-   
-  <div class="wy-grid-for-nav">
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-          
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
 
-          
-            <a href="../index.html" class="icon icon-home"> autodE
-          
-
-          
-          </a>
-
-          
-            
-            
-              <div class="version">
-                1.0.4
-              </div>
-            
-          
-
-          
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
 
-          
-        </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
 
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <ul class="current">
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">autodE  documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../install.html">Install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quick Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../config.html">Configuration</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Reference</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="conformers/index.html">Conformers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pes/index.html">PES</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reactions/index.html">Reactions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="smiles/index.html">SMILES</a></li>
-<li class="toctree-l2"><a class="reference internal" href="solvent/index.html">Solvent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="species/index.html">Species</a></li>
-<li class="toctree-l2"><a class="reference internal" href="transition_states/index.html">Transition States</a></li>
-<li class="toctree-l2"><a class="reference internal" href="wrappers/index.html">Wrappers</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Reference</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="atoms.html">Atoms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bond_lengths.html">Bonds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bonds.html">Bonds</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Calculation</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="conformers/index.html">Conformers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="conformers/conf_gen.html">Conf Gen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conformers/conformer.html">Conformer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conformers/conformers.html">Conformers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="pes/index.html">PES</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="pes/pes.html">Potential Energy Surfaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pes/mep.html">Min Energy Pathway</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="reactions/index.html">Reactions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="reactions/multistep.html">Multistep Reaction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reactions/reaction.html">Reaction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reactions/reaction_types.html">Reaction Types</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="smiles/index.html">SMILES</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="smiles/smiles.html">Molecules from SMILES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smiles/parser.html">SMILES Parser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smiles/builder.html">3D Geometry Builder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smiles/atom_types.html">SMILES Atom Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smiles/angles.html">SMILES Angles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smiles/base.html">SMILES Base</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="solvent/index.html">Solvent</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="solvent/solvents.html">Solvents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="solvent/explicit_solvent.html">Explicit Solvent</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="species/index.html">Species</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="species/complex.html">Complex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="species/molecule.html">Molecule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="species/species.html">Species</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="neb/index.html">Nudged elastic band</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="neb/neb.html">NEB Transition states</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neb/original.html">Original NEB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neb/ci.html">Climbing image NEB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neb/idpp.html">Image dependent pair potential</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="transition_states/index.html">Transition States</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="transition_states/base.html">Base</a></li>
+<li class="toctree-l3"><a class="reference internal" href="transition_states/locate_tss.html">Locate TSs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="transition_states/templates.html">Templates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="transition_states/transition_state.html">Transition State</a></li>
+<li class="toctree-l3"><a class="reference internal" href="transition_states/truncation.html">Truncation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="transition_states/ts_guess.html">TS Guess</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="thermochemistry/index.html">Thermochemistry</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="thermochemistry/igm.html">Ideal gas model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="thermochemistry/symmetry.html">Symmetry</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="wrappers/index.html">Wrappers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="wrappers/base.html">Base</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wrappers/g09.html">Gaussian09</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wrappers/keywords.html">Keywords</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wrappers/mopac.html">MOPAC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wrappers/nwchem.html">NWChem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wrappers/orca.html">ORCA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wrappers/xtb.html">XTB</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="opt/index.html">Optimisation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="opt/coordinates.html">Coordinates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="opt/optimisers.html">Optimisers</a></li>
+</ul>
+</details></li>
 <li class="toctree-l2"><a class="reference internal" href="bond_rearrangement.html">Bond Rearrangement</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Calculation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="config.html">Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="constants.html">Constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="exceptions.html">Exceptions</a></li>
@@ -115,438 +243,270 @@
 <li class="toctree-l2"><a class="reference internal" href="substitution.html">Substitution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="units.html">Units</a></li>
 <li class="toctree-l2"><a class="reference internal" href="utils.html">Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="values.html">Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hessians.html">Hessians</a></li>
 </ul>
-</li>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Examples</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../examples/index.html">Examples</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../examples/species.html">Species</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/molecules.html">Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/reactions.html">Reactions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/nci.html">Non-covalent Interaction Complexes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/manipulation.html">Molecular Manipulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/pes1d.html">1D PES Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/pes2d.html">2D PES Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/conformers.html">Conformer Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/rmsd.html">RMSD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/tss.html">Transition States</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/thermochem.html">Thermochemistry</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dev/index.html">Development</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dev/overview.html">Code Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev/contributing.html">Contributing to autodE</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../citation.html">Citation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1002/anie.202011941">Paper</a></li>
 </ul>
 
-            
-          
-        </div>
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
       </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
       
-      <nav class="wy-nav-top" aria-label="top navigation">
+      <main id="main-content" class="bd-main" role="main">
         
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">autodE</a>
         
-      </nav>
 
+<div class="sbt-scroll-pixel-helper"></div>
 
-      <div class="wy-nav-content">
-        
-        <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
-  <ul class="wy-breadcrumbs">
-    
-      <li><a href="../index.html">Docs</a> &raquo;</li>
-        
-          <li><a href="index.html">Reference</a> &raquo;</li>
-        
-      <li>Calculation</li>
-    
-    
-      <li class="wy-breadcrumbs-aside">
-        
-            
-            <a href="../_sources/reference/calculation.rst.txt" rel="nofollow"> View page source</a>
-          
-        
-      </li>
-    
-  </ul>
-
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
   
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-            
-  <section id="module-autode.calculation">
-<span id="calculation"></span><h1>Calculation<a class="headerlink" href="#module-autode.calculation" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
-<dt id="autode.calculation.Calculation">
-<em class="property">class </em><code class="sig-prename descclassname">autode.calculation.</code><code class="sig-name descname">Calculation</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">molecule</em>, <em class="sig-param">method</em>, <em class="sig-param">keywords</em>, <em class="sig-param">n_cores=1</em>, <em class="sig-param">bond_ids_to_add=None</em>, <em class="sig-param">other_input_block=None</em>, <em class="sig-param">distance_constraints=None</em>, <em class="sig-param">cartesian_constraints=None</em>, <em class="sig-param">point_charges=None</em>, <em class="sig-param">temp=None</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.calculation.Calculation" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
-<dt id="autode.calculation.Calculation.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">molecule</em>, <em class="sig-param">method</em>, <em class="sig-param">keywords</em>, <em class="sig-param">n_cores=1</em>, <em class="sig-param">bond_ids_to_add=None</em>, <em class="sig-param">other_input_block=None</em>, <em class="sig-param">distance_constraints=None</em>, <em class="sig-param">cartesian_constraints=None</em>, <em class="sig-param">point_charges=None</em>, <em class="sig-param">temp=None</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.calculation.Calculation.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>name</strong> (<em>str</em>) – </p></li>
-<li><p><strong>molecule</strong> (<em>autode.species.Species</em>) – Molecule to be calculated</p></li>
-<li><p><strong>method</strong> (<a class="reference internal" href="wrappers/base.html#autode.wrappers.base.ElectronicStructureMethod" title="autode.wrappers.base.ElectronicStructureMethod"><em>autode.wrappers.base.ElectronicStructureMethod</em></a>) – </p></li>
-<li><p><strong>keywords</strong> (<a class="reference internal" href="wrappers/keywords.html#autode.wrappers.keywords.Keywords" title="autode.wrappers.keywords.Keywords"><em>autode.wrappers.keywords.Keywords</em></a>) – </p></li>
-</ul>
-</dd>
-<dt class="field-even">Keyword Arguments</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>n_cores</strong> (<em>int</em>) – Number of cores available (default: {1})</p></li>
-<li><p><strong>bond_ids_to_add</strong> (<em>list</em><em>(</em><em>tuples</em><em>)</em>) – List of bonds to add to internal
-coordinates (default: {None})</p></li>
-<li><p><strong>other_input_block</strong> (<em>str</em>) – Other input block to add (default: {None})</p></li>
-<li><p><strong>distance_constraints</strong> (<em>dict</em>) – keys = tuple of atom ids for a bond to
-be kept at fixed length, value = dist
-to be fixed at (default: {None})</p></li>
-<li><p><strong>cartesian_constraints</strong> (<em>list</em><em>(</em><em>int</em><em>)</em>) – List of atom ids to fix at their
-cartesian coordinates
-(default: {None})</p></li>
-<li><p><strong>point_charges</strong> (<em>list</em><em>(</em><a class="reference internal" href="point_charges.html#autode.point_charges.PointCharge" title="autode.point_charges.PointCharge"><em>autode.point_charges.PointCharge</em></a><em>)</em>) – List of
-float of point charges, x, y, z
-coordinates for each point charge</p></li>
-<li><p><strong>temp</strong> (<em>float</em>) – Temperature to perform the calculation at in K, or
-None</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="autode.calculation.Calculation.clean_up">
-<code class="sig-name descname">clean_up</code><span class="sig-paren">(</span><em class="sig-param">force=False</em>, <em class="sig-param">everything=False</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.calculation.Calculation.clean_up" title="Permalink to this definition">¶</a></dt>
-<dd><p>Clean up input files, if Config.keep_input_files is False</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="autode.calculation.Calculation.execute_calculation">
-<code class="sig-name descname">execute_calculation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#autode.calculation.Calculation.execute_calculation" title="Permalink to this definition">¶</a></dt>
-<dd><p>Execute a calculation if it has not been run or finish correctly</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="autode.calculation.Calculation.generate_input">
-<code class="sig-name descname">generate_input</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#autode.calculation.Calculation.generate_input" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generate the required input</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="autode.calculation.Calculation.get_atomic_charges">
-<code class="sig-name descname">get_atomic_charges</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#autode.calculation.Calculation.get_atomic_charges" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the partial atomic charges from a calculation. The method used to
-calculate them depends on the QM method and are implemented in their
-respective wrappers</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Atomic charges in units of e</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>(list(float))</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="autode.calculation.Calculation.get_energy">
-<code class="sig-name descname">get_energy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#autode.calculation.Calculation.get_energy" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="autode.calculation.Calculation.get_enthalpy">
-<code class="sig-name descname">get_enthalpy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#autode.calculation.Calculation.get_enthalpy" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="autode.calculation.Calculation.get_final_atoms">
-<code class="sig-name descname">get_final_atoms</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#autode.calculation.Calculation.get_final_atoms" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the atoms from the final step of a geometry optimisation</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p></p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>(list(<a class="reference internal" href="atoms.html#autode.atoms.Atom" title="autode.atoms.Atom">autode.atoms.Atom</a>))</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="autode.calculation.Calculation.get_free_energy">
-<code class="sig-name descname">get_free_energy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#autode.calculation.Calculation.get_free_energy" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="autode.calculation.Calculation.get_gradients">
-<code class="sig-name descname">get_gradients</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#autode.calculation.Calculation.get_gradients" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the gradient (dE/dr) with respect to atomic displacement from a
-calculation</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><dl class="simple">
-<dt>Gradient vectors for each atom (Ha Å^-1)</dt><dd><p>gradients.shape = (n_atoms, 3)</p>
-</dd>
-</dl>
-</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>(np.ndarray)</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="autode.calculation.Calculation.get_imaginary_freqs">
-<code class="sig-name descname">get_imaginary_freqs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#autode.calculation.Calculation.get_imaginary_freqs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the imaginary frequencies from a calculation output note that
-they are returned as negative to conform with standard QM codes</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>List of negative frequencies in wavenumbers (cm-1)</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>(list(float))</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="autode.calculation.Calculation.get_normal_mode_displacements">
-<code class="sig-name descname">get_normal_mode_displacements</code><span class="sig-paren">(</span><em class="sig-param">mode_number</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.calculation.Calculation.get_normal_mode_displacements" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the displacements along a mode for each of the n_atoms in the
-structure will return a list of length n_atoms each with 3 components
-(x, y, z)</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>mode_number</strong> (<em>int</em>) – Normal mode number. 6 will be the first
-vibrational mode as 0-&gt;2 are translation and
-3-&gt;5 rotation</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><dl class="simple">
-<dt>Displacement vectors for each atom (Å)</dt><dd><p>modes.shape = (n_atoms, 3)</p>
-</dd>
-</dl>
-</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>(np.ndarray)</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="autode.calculation.Calculation.optimisation_converged">
-<code class="sig-name descname">optimisation_converged</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#autode.calculation.Calculation.optimisation_converged" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check whether a calculation has has converged to within the theshold
-on energies and graidents specified in the input</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>(bool)</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="autode.calculation.Calculation.optimisation_nearly_converged">
-<code class="sig-name descname">optimisation_nearly_converged</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#autode.calculation.Calculation.optimisation_nearly_converged" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check whether a calculation has nearly converged and may just need
-more geometry optimisation steps to complete successfully</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>(bool)</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="autode.calculation.Calculation.run">
-<code class="sig-name descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#autode.calculation.Calculation.run" title="Permalink to this definition">¶</a></dt>
-<dd><p>Run the calculation using the EST method</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="autode.calculation.Calculation.terminated_normally">
-<code class="sig-name descname">terminated_normally</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#autode.calculation.Calculation.terminated_normally" title="Permalink to this definition">¶</a></dt>
-<dd><p>Determine if the calculation terminated without error</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="autode.calculation.CalculationInput">
-<em class="property">class </em><code class="sig-prename descclassname">autode.calculation.</code><code class="sig-name descname">CalculationInput</code><span class="sig-paren">(</span><em class="sig-param">keywords</em>, <em class="sig-param">solvent</em>, <em class="sig-param">additional_input</em>, <em class="sig-param">added_internals</em>, <em class="sig-param">point_charges</em>, <em class="sig-param">temp</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.calculation.CalculationInput" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
-<dt id="autode.calculation.CalculationInput.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">keywords</em>, <em class="sig-param">solvent</em>, <em class="sig-param">additional_input</em>, <em class="sig-param">added_internals</em>, <em class="sig-param">point_charges</em>, <em class="sig-param">temp</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.calculation.CalculationInput.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>keywords</strong> (<a class="reference internal" href="wrappers/keywords.html#autode.wrappers.keywords.Keywords" title="autode.wrappers.keywords.Keywords"><em>autode.wrappers.keywords.Keywords</em></a>) – </p></li>
-<li><p><strong>solvent</strong> (<em>str</em><em> or </em><em>None</em>) – Name of the solvent for this QM method</p></li>
-<li><p><strong>additional_input</strong> (<em>str</em><em> or </em><em>None</em>) – Any additional input string to add
-to the input file, or None</p></li>
-<li><p><strong>added_internals</strong> (<em>list</em><em>(</em><em>tuple</em><em>(</em><em>int</em><em>)</em><em>) or </em><em>None</em>) – Atom indexes to add to
-the internal coordinates</p></li>
-<li><p><strong>point_charges</strong> (<em>list</em><em>(</em><a class="reference internal" href="point_charges.html#autode.point_charges.PointCharge" title="autode.point_charges.PointCharge"><em>autode.point_charges.PointCharge</em></a><em>) or </em><em>None</em>) – list of float of point charges, x, y, z coordinates
-for each point charge</p></li>
-<li><p><strong>temp</strong> (<em>float</em>) – Temperature to perform the calculation at in K, or
-None</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="autode.calculation.CalculationInput.exists">
-<code class="sig-name descname">exists</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#autode.calculation.CalculationInput.exists" title="Permalink to this definition">¶</a></dt>
-<dd><p>Does the input (files) exist?</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="autode.calculation.CalculationInput.get_input_filenames">
-<code class="sig-name descname">get_input_filenames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#autode.calculation.CalculationInput.get_input_filenames" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a list of all the input files</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="autode.calculation.CalculationOutput">
-<em class="property">class </em><code class="sig-prename descclassname">autode.calculation.</code><code class="sig-name descname">CalculationOutput</code><a class="headerlink" href="#autode.calculation.CalculationOutput" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
-<dt id="autode.calculation.CalculationOutput.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#autode.calculation.CalculationOutput.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="autode.calculation.CalculationOutput.exists">
-<code class="sig-name descname">exists</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#autode.calculation.CalculationOutput.exists" title="Permalink to this definition">¶</a></dt>
-<dd><p>Does the calculation output exist?</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="autode.calculation.CalculationOutput.set_lines">
-<code class="sig-name descname">set_lines</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#autode.calculation.CalculationOutput.set_lines" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the output files lines. This may be slow for large files but should
-not become a bottleneck when running standard DFT/WF calculations</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>(None)</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="autode.calculation.Constraints">
-<em class="property">class </em><code class="sig-prename descclassname">autode.calculation.</code><code class="sig-name descname">Constraints</code><span class="sig-paren">(</span><em class="sig-param">distance</em>, <em class="sig-param">cartesian</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.calculation.Constraints" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
-<dt id="autode.calculation.Constraints.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">distance</em>, <em class="sig-param">cartesian</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.calculation.Constraints.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>distance</strong> (<em>any</em>) – Keys of: tuple(int) for two atom indexes and
-values of the distance in Å or None</p></li>
-<li><p><strong>cartesian</strong> (<em>any</em>) – List of atom indexes or None</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="autode.calculation.Constraints.any">
-<code class="sig-name descname">any</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#autode.calculation.Constraints.any" title="Permalink to this definition">¶</a></dt>
-<dd><p>Are there any constraints?</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="function">
-<dt id="autode.calculation.execute_calc">
-<code class="sig-prename descclassname">autode.calculation.</code><code class="sig-name descname">execute_calc</code><span class="sig-paren">(</span><em class="sig-param">calc</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.calculation.execute_calc" title="Permalink to this definition">¶</a></dt>
-<dd><p>Top level function that can be hashed</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="autode.calculation.get_solvent_name">
-<code class="sig-prename descclassname">autode.calculation.</code><code class="sig-name descname">get_solvent_name</code><span class="sig-paren">(</span><em class="sig-param">molecule</em>, <em class="sig-param">method</em><span class="sig-paren">)</span><a class="headerlink" href="#autode.calculation.get_solvent_name" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the solvent keyword to use in the calculation given an QM method</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>molecule</strong> (<em>autode.species.Species</em>) – </p></li>
-<li><p><strong>method</strong> (<a class="reference internal" href="wrappers/base.html#autode.wrappers.base.ElectronicStructureMethod" title="autode.wrappers.base.ElectronicStructureMethod"><em>autode.wrappers.base.ElectronicStructureMethod</em></a>) – </p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-</section>
-
-
-           </div>
-           
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+    <div class="header-article-items__start">
       
-        <a href="config.html" class="btn btn-neutral float-right" title="Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="bond_rearrangement.html" class="btn btn-neutral float-left" title="Bond Rearrangement" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
       
     </div>
   
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
 
-  <hr/>
+<div class="article-header-buttons">
 
-  <div role="contentinfo">
-    <p>
-        &copy; Copyright 2020, Tom Young, Joseph Silcock
 
-    </p>
-  </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
-</footer>
 
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/reference/calculation.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Calculation</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
         </div>
-      </div>
+    </div>
+</div>
 
-    </section>
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="calculation">
+<h1>Calculation<a class="headerlink" href="#calculation" title="Link to this heading">#</a></h1>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="bonds.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Bonds</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="conformers/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Conformers</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Tom Young, Joseph Silcock
+</p>
 
   </div>
   
-
-
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script>
-
-  
-  
+  <div class="footer-item">
     
-   
 
-</body>
+  <p class="copyright">
+    
+      © Copyright 2020-2021, Tom Young, Joseph Silcock.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
 </html>
